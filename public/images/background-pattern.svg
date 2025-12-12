@@ -1,0 +1,58 @@
+<svg viewBox="0.0000 0.0000 1440.0000 870.0000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"><defs><mask id="mask0_82_5563" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="1440">
+<g id="Mask">
+<g id="_Background mask">
+<rect width="1440" height="1440" fill="url(#paint0_radial_82_5563)"/>
+</g>
+</g>
+</mask><radialGradient id="paint0_radial_82_5563" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 -0.000171661) rotate(90) scale(1440 751.588)">
+<stop/>
+<stop offset="0.953125" stop-opacity="0"/>
+</radialGradient><clipPath id="clip2_82_5563">
+<rect width="1920" height="1440" fill="white" transform="translate(-240)"/>
+</clipPath><clipPath id="clip3_82_5563">
+<rect width="1920" height="1440" fill="white" transform="translate(-240)"/>
+</clipPath><clipPath id="clip4_82_5563">
+<rect width="1920" height="1440" fill="white" transform="translate(-240)"/>
+</clipPath></defs><g id="Background pattern">
+<mask id="mask0_82_5563" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="1440">
+<g id="Mask">
+<g id="_Background mask">
+<rect width="1440" height="1440" fill="url(#paint0_radial_82_5563)"/>
+</g>
+</g>
+</mask>
+<g mask="url(#mask0_82_5563)">
+<g id="Content">
+<g id="Lines" clip-path="url(#clip2_82_5563)">
+<g id="Vertical" clip-path="url(#clip3_82_5563)">
+<line id="Line" x1="48.5" x2="48.5" y2="1440" stroke="#22262F"/>
+<line id="Line_2" x1="144.5" x2="144.5" y2="1440" stroke="#22262F"/>
+<line id="Line_3" x1="240.5" x2="240.5" y2="1440" stroke="#22262F"/>
+<line id="Line_4" x1="336.5" x2="336.5" y2="1440" stroke="#22262F"/>
+<line id="Line_5" x1="432.5" x2="432.5" y2="1440" stroke="#22262F"/>
+<line id="Line_6" x1="528.5" x2="528.5" y2="1440" stroke="#22262F"/>
+<line id="Line_7" x1="624.5" x2="624.5" y2="1440" stroke="#22262F"/>
+<line id="Line_8" x1="720.5" x2="720.5" y2="1440" stroke="#22262F"/>
+<line id="Line_9" x1="816.5" x2="816.5" y2="1440" stroke="#22262F"/>
+<line id="Line_10" x1="912.5" x2="912.5" y2="1440" stroke="#22262F"/>
+<line id="Line_11" x1="1008.5" x2="1008.5" y2="1440" stroke="#22262F"/>
+<line id="Line_12" x1="1104.5" x2="1104.5" y2="1440" stroke="#22262F"/>
+<line id="Line_13" x1="1200.5" x2="1200.5" y2="1440" stroke="#22262F"/>
+<line id="Line_14" x1="1296.5" x2="1296.5" y2="1440" stroke="#22262F"/>
+<line id="Line_15" x1="1392.5" x2="1392.5" y2="1440" stroke="#22262F"/>
+</g>
+<g id="Horizontal" clip-path="url(#clip4_82_5563)">
+<line id="Line_16" x1="-240" y1="95.5" x2="1680" y2="95.5" stroke="#22262F"/>
+<line id="Line_17" x1="-240" y1="191.5" x2="1680" y2="191.5" stroke="#22262F"/>
+<line id="Line_18" x1="-240" y1="287.5" x2="1680" y2="287.5" stroke="#22262F"/>
+<line id="Line_19" x1="-240" y1="383.5" x2="1680" y2="383.5" stroke="#22262F"/>
+<line id="Line_20" x1="-240" y1="479.5" x2="1680" y2="479.5" stroke="#22262F"/>
+<line id="Line_21" x1="-240" y1="575.5" x2="1680" y2="575.5" stroke="#22262F"/>
+<line id="Line_22" x1="-240" y1="671.5" x2="1680" y2="671.5" stroke="#22262F"/>
+<line id="Line_23" x1="-240" y1="767.5" x2="1680" y2="767.5" stroke="#22262F"/>
+<line id="Line_24" x1="-240" y1="863.5" x2="1680" y2="863.5" stroke="#22262F"/>
+</g>
+</g>
+</g>
+</g>
+</g></svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"><defs><linearGradient id="paint2_linear_82_5563" x1="0.8610000000000042" y1="15.949300000000001" x2="25.085000000000008" y2="3.8394000000000013" gradientUnits="userSpaceOnUse">
+<stop stop-color="#53389E"/>
+<stop offset="1" stop-color="#7F56D9"/>
+</linearGradient><linearGradient id="paint3_linear_82_5563" x1="0.8610000000000042" y1="0.8611000000000004" x2="31.13900000000001" y2="0.8611000000000004" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7F56D9"/>
+<stop offset="1" stop-color="#9E77ED"/>
+</linearGradient></defs><g id="Icon_2">
+<path id="Ellipse 1" d="M5.295,26.7048c-2.839,-2.8391 -4.434,-6.6897 -4.434,-10.7048c0,-4.0151 1.595,-7.8657 4.434,-10.7048c2.839,-2.8391 6.69,-4.4341 10.705,-4.4341c4.015,0 7.866,1.595 10.705,4.4341l-10.705,10.7048z" fill="url(#paint2_linear_82_5563)"/>
+<path id="Ellipse 2" d="M26.705,26.7048c-2.839,2.8391 -6.69,4.4341 -10.705,4.4341c-4.015,0 -7.866,-1.595 -10.705,-4.4341l10.705,-10.7048z" fill="url(#paint3_linear_82_5563)"/>
+</g></svg>
