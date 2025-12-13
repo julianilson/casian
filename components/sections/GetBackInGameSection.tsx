@@ -5,13 +5,13 @@ import Button from '../ui/Button';
 
 export default function GetBackInGameSection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]">
-      <Card className="p-0 overflow-hidden flex flex-col lg:flex-row">
-        <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
+    <section className="section-container bg-primary">
+      <Card className="p-0 overflow-hidden flex flex-col lg:flex-row card-shadow-lg bg-brand-solid">
+        <div className="flex-1 p-(--spacing-7xl) flex flex-col justify-center bg-(--Colors-Background-bg-brand-section)">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-(--Colors-Text-text-primary-on-brand) mb-6">
             Get back in the game
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] mb-8">
+          <p className="text-lg text-(--Colors-Text-text-secondary-on-brand) mb-8">
             Regain your confidence, sharpen your strategy, and fast-track your next career move with personalized AI coaching built for experienced professionals.
           </p>
           <Button variant="primary" className="w-fit">Kickoff Your First Session</Button>

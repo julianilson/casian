@@ -9,11 +9,13 @@ export default function MetricsSection() {
   ];
 
   return (
-    <section className="section-container bg-[--color-bg-primary]">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+    <section className="section-container bg-primary">
+      <div className="max-w-6xl mx-auto flex flex-col gap-8">
+        <div className="text-center">
           <div className="flex justify-center mb-6">
-            <TrophyIcon className="w-8 h-8 text-[--color-brand]" />
+            <div className="featured-icon-lg featured-icon-brand-light">
+              <TrophyIcon className="w-7 h-7" />
+            </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Setting the Bar for Job Search Success
@@ -23,20 +25,20 @@ export default function MetricsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+        <div className="flex flex-wrap gap-10 rounded-2xl bg-(--Colors-Background-bg-secondary) px-8 py-16 justify-center">
           {metrics.map((metric, index) => (
-            <div key={index} className="text-center">
-              <p className="text-6xl lg:text-7xl font-semibold text-[--color-text-primary] mb-4">
+            <div key={index} className="flex flex-col gap-3 items-center p-6">
+              <p className="text-6xl font-semibold text-(--Colors-Text-text-brand-tertiary)" style={{ letterSpacing: '-1.2px', lineHeight: '72px' }}>
                 {metric.value}
               </p>
-              <p className="text-lg text-[--color-text-tertiary]">
+              <p className="text-lg font-semibold text-(--Colors-Text-text-primary)">
                 {metric.label}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-sm text-[--color-text-muted]">
+        <p className="text-center text-lg text-(--Colors-Text-text-primary)">
           *Targets shown are our goals for early users. Actual results may vary as we continue improve Casian.
         </p>
       </div>

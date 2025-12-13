@@ -36,41 +36,41 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]">
+    <section className="section-container bg-primary">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 mb-16">
-          <div className="flex-1">
-            <div className="flex items-center gap-4 mb-8">
-              <LightbulbIcon className="w-8 h-8 text-[--color-brand]" />
+        <div className="flex flex-col md:flex-row gap-16">
+          {/* Left: Header Section */}
+          <div className="md:w-1/3">
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-5">
+                <div className="featured-icon-lg featured-icon-brand-light">
+                  <LightbulbIcon className="w-7 h-7" />
+                </div>
+              </div>
               <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary]">
                 How It Works
               </h2>
-            </div>
-            <p className="text-lg text-[--color-text-tertiary]">
-              A proven, six-step system that transforms your job search from guesswork to offer letter.
-            </p>
-          </div>
-          <div className="flex-1 grid grid-cols-2 gap-8">
-            {steps.map((step) => (
-              <div key={step.number} className="bg-[--color-bg-secondary] rounded-xl p-6">
-                <p className="text-3xl font-semibold text-[--color-brand] mb-2">{step.number}</p>
-                <p className="text-sm font-semibold text-[--color-text-primary]">{step.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {steps.map((step) => (
-            <div key={step.number}>
-              <h3 className="text-xl font-semibold text-[--color-text-primary] mb-3">
-                {step.number}. {step.title}
-              </h3>
-              <p className="text-[--color-text-tertiary] leading-relaxed">
-                {step.description}
+              <p className="text-lg text-[--color-text-tertiary]">
+                A proven, six-step system that transforms your job search from guesswork to offer letter.
               </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: Content Grid - 2 columns */}
+          <div className="md:w-2/3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {steps.map((step) => (
+                <div key={step.number} className="flex flex-col gap-1">
+                  <h3 className="text-lg font-semibold text-[--color-text-primary]">
+                    {step.number}. {step.title}
+                  </h3>
+                  <p className="text-base text-[--color-text-tertiary] leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

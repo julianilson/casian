@@ -5,8 +5,8 @@ import Button from '../ui/Button';
 
 export default function FinalCTASection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]">
-      <Card>
+    <section className="section-container bg-primary">
+      <Card className="p-8 lg:p-12 card-shadow-lg bg-[var(--Colors-Background-bg-secondary)]">
         <div className="flex flex-col items-center text-center gap-6">
           <Image
             src="/images/avatar-group-small.svg"

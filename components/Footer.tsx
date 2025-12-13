@@ -4,7 +4,7 @@ import Button from './ui/Button';
 
 export default function Footer() {
   return (
-    <footer className="bg-[--color-bg-primary] border-t border-[--color-border]">
+    <footer className="bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <LogoIcon className="w-8 h-8 mx-auto mb-6" />
@@ -17,7 +17,7 @@ export default function Footer() {
           <Button variant="primary">Talk to Casian now</Button>
         </div>
 
-        <div className="border-t border-[--color-border] pt-8">
+        <div className="border-t border-[var(--color-border-secondary)] pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-[--color-text-tertiary]">
               © 2025 Casian AI. All rights reserved.

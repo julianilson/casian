@@ -61,35 +61,34 @@ const features = [
 
 export default function ProductFeaturesSection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]">
+    <section className="section-container bg-primary">
       <div className="max-w-6xl mx-auto space-y-24">
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
           <p className="text-sm font-semibold text-[--color-text-secondary] mb-4">Introducing Casian AI</p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Your Personalized Job-Search Coach
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl mx-auto">
+          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
             Casian AI is the expert career strategist, résumé whisperer and hype-man you never knew you could afford—available 24/7 in your AirPods.
           </p>
         </div>
 
         {features.map((feature, index) => (
-          <div key={index} className={`flex flex-col gap-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          <div key={index} className={`flex flex-col gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
             <div className="flex-1">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-lg bg-[--color-brand] flex items-center justify-center border-2 border-[--color-brand-light] shrink-0">
-                  <feature.icon className="w-8 h-8" />
+              <div className="flex items-start gap-6 mb-6">
+                <div className="featured-icon-lg featured-icon-brand-light shrink-0">
+                  <feature.icon className="w-7 h-7" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-[--color-text-primary]">
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-3xl font-semibold text-[--color-text-primary]">
                     {feature.title}
                   </h3>
+                  <p className="text-lg text-[--color-text-tertiary]">{feature.description}</p>
                 </div>
               </div>
-              <p className="text-lg text-[--color-text-tertiary] mb-8">
-                {feature.description}
-              </p>
-              <div className="space-y-4">
+              
+              <div className="space-y-4 pt-4 pl-24">
                 {feature.checks.map((check, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
                     <CheckmarkIcon className="w-6 h-6 text-[--color-success] shrink-0 mt-1" />

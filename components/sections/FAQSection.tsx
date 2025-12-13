@@ -94,7 +94,7 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]" id="faq">
+    <section className="section-container bg-primary" id="faq">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-4">
@@ -117,7 +117,8 @@ export default function FAQSection() {
                   <Accordion.Item
                     key={qIndex}
                     value={`${catIndex}-${qIndex}`}
-                    className="border-b border-[--color-border] pb-4"
+                    className="border-b pb-4"
+                    style={{ borderColor: 'var(--color-border-secondary)' }}
                   >
                     <Accordion.Header>
                       <Accordion.Trigger className="flex items-center justify-between w-full text-left group">

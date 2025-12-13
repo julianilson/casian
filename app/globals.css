@@ -1,120 +1,1329 @@
 @import "tailwindcss";
 
 @layer base {
+
+  /* ============================================
+     BASE COLOR PRIMITIVES
+     ============================================ */
   :root {
-    /* Colors */
-    --color-bg-primary: #0c0e12;
-    --color-bg-secondary: #13161b;
-    --color-bg-tertiary: #22262f;
-    --color-brand: #7f56d9;
-    --color-brand-light: #d6bbfb;
-    --color-text-primary: #f7f7f7;
-    --color-text-secondary: #cecfd2;
-    --color-text-tertiary: #94979c;
-    --color-text-muted: #61656c;
-    --color-success: #17b26a;
-    --color-success-light: #abefc6;
-    --color-border: #373a41;
-    --color-accent-purple: #e9d7fe;
-    
-    /* Spacing */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 12px;
-    --spacing-lg: 16px;
-    --spacing-xl: 20px;
-    --spacing-2xl: 24px;
-    --spacing-3xl: 32px;
-    --spacing-4xl: 48px;
-    --spacing-5xl: 64px;
-    --spacing-6xl: 96px;
-    
-    /* Border radius */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    /* Base Colors */
+    --Colors-Base-white: #FFFFFF;
+    --Colors-Base-black: #000000;
+    --Colors-Base-transparent: transparent;
+
+    /* Gray Scale (Light Mode) */
+    --Colors-Gray-light-mode-25: #FCFCFD;
+    --Colors-Gray-light-mode-50: #F9FAFB;
+    --Colors-Gray-light-mode-100: #F2F4F7;
+    --Colors-Gray-light-mode-200: #E4E7EC;
+    --Colors-Gray-light-mode-300: #D0D5DD;
+    --Colors-Gray-light-mode-400: #98A2B3;
+    --Colors-Gray-light-mode-500: #667085;
+    --Colors-Gray-light-mode-600: #475467;
+    --Colors-Gray-light-mode-700: #344054;
+    --Colors-Gray-light-mode-800: #1D2939;
+    --Colors-Gray-light-mode-900: #101828;
+    --Colors-Gray-light-mode-950: #0C111D;
+
+    /* Gray Scale (Dark Mode) */
+    --Colors-Gray-dark-mode-25: #1A1D1F;
+    --Colors-Gray-dark-mode-50: #F9FAFB;
+    --Colors-Gray-dark-mode-100: #F2F4F7;
+    --Colors-Gray-dark-mode-200: #EAECF0;
+    --Colors-Gray-dark-mode-300: #D0D5DD;
+    --Colors-Gray-dark-mode-400: #98A2B3;
+    --Colors-Gray-dark-mode-500: #667085;
+    --Colors-Gray-dark-mode-600: #475467;
+    --Colors-Gray-dark-mode-700: #344054;
+    --Colors-Gray-dark-mode-800: #1D2939;
+    --Colors-Gray-dark-mode-900: #101828;
+    --Colors-Gray-dark-mode-950: #0C0E12;
+
+    /* Brand Colors */
+    --Colors-Brand-25: #FCFAFF;
+    --Colors-Brand-50: #F9F5FF;
+    --Colors-Brand-100: #F4EBFF;
+    --Colors-Brand-200: #E9D7FE;
+    --Colors-Brand-300: #D6BBFB;
+    --Colors-Brand-400: #B692F6;
+    --Colors-Brand-500: #9E77ED;
+    --Colors-Brand-600: #7F56D9;
+    --Colors-Brand-700: #6941C6;
+    --Colors-Brand-800: #53389E;
+    --Colors-Brand-900: #42307D;
+    --Colors-Brand-950: #2C1C5F;
+
+    /* Error Colors */
+    --Colors-Error-25: #FFFBFA;
+    --Colors-Error-50: #FEF3F2;
+    --Colors-Error-100: #FEE4E2;
+    --Colors-Error-200: #FECDCA;
+    --Colors-Error-300: #FDA29B;
+    --Colors-Error-400: #F97066;
+    --Colors-Error-500: #F04438;
+    --Colors-Error-600: #D92D20;
+    --Colors-Error-700: #B42318;
+    --Colors-Error-800: #912018;
+    --Colors-Error-900: #7A271A;
+    --Colors-Error-950: #55160C;
+
+    /* Warning Colors */
+    --Colors-Warning-25: #FFFCF5;
+    --Colors-Warning-50: #FFFAEB;
+    --Colors-Warning-100: #FEF0C7;
+    --Colors-Warning-200: #FEDF89;
+    --Colors-Warning-300: #FEC84B;
+    --Colors-Warning-400: #FDB022;
+    --Colors-Warning-500: #F79009;
+    --Colors-Warning-600: #DC6803;
+    --Colors-Warning-700: #B54708;
+    --Colors-Warning-800: #93370D;
+    --Colors-Warning-900: #7A2E0E;
+    --Colors-Warning-950: #4E1D09;
+
+    /* Success Colors */
+    --Colors-Success-25: #F6FEF9;
+    --Colors-Success-50: #ECFDF3;
+    --Colors-Success-100: #D1FADF;
+    --Colors-Success-200: #A6F4C5;
+    --Colors-Success-300: #6CE9A6;
+    --Colors-Success-400: #32D583;
+    --Colors-Success-500: #12B76A;
+    --Colors-Success-600: #039855;
+    --Colors-Success-700: #027A48;
+    --Colors-Success-800: #05603A;
+    --Colors-Success-900: #054F31;
+    --Colors-Success-950: #053321;
+
+    /* Gray Blue Colors */
+    --Colors-Gray-blue-25: #FCFCFD;
+    --Colors-Gray-blue-50: #F8F9FC;
+    --Colors-Gray-blue-100: #EAECF5;
+    --Colors-Gray-blue-200: #D5D9EB;
+    --Colors-Gray-blue-300: #B3B8DB;
+    --Colors-Gray-blue-400: #717BBC;
+    --Colors-Gray-blue-500: #4E5BA6;
+    --Colors-Gray-blue-600: #3E4784;
+    --Colors-Gray-blue-700: #363F72;
+    --Colors-Gray-blue-800: #293056;
+    --Colors-Gray-blue-900: #101323;
+    --Colors-Gray-blue-950: #0D0F1C;
+
+    /* Blue Light Colors */
+    --Colors-Blue-light-25: #F5FBFF;
+    --Colors-Blue-light-50: #F0F9FF;
+    --Colors-Blue-light-100: #E0F2FE;
+    --Colors-Blue-light-200: #B9E6FE;
+    --Colors-Blue-light-300: #7CD4FD;
+    --Colors-Blue-light-400: #36BFFA;
+    --Colors-Blue-light-500: #0BA5EC;
+    --Colors-Blue-light-600: #0086C9;
+    --Colors-Blue-light-700: #026AA2;
+    --Colors-Blue-light-800: #065986;
+    --Colors-Blue-light-900: #0B4A6F;
+    --Colors-Blue-light-950: #062C41;
+
+    /* Blue Colors */
+    --Colors-Blue-25: #F5FAFF;
+    --Colors-Blue-50: #EFF8FF;
+    --Colors-Blue-100: #D1E9FF;
+    --Colors-Blue-200: #B2DDFF;
+    --Colors-Blue-300: #84CAFF;
+    --Colors-Blue-400: #53B1FD;
+    --Colors-Blue-500: #2E90FA;
+    --Colors-Blue-600: #1570EF;
+    --Colors-Blue-700: #175CD3;
+    --Colors-Blue-800: #1849A9;
+    --Colors-Blue-900: #194185;
+    --Colors-Blue-950: #102A56;
+
+    /* Indigo Colors */
+    --Colors-Indigo-25: #F5F8FF;
+    --Colors-Indigo-50: #EEF4FF;
+    --Colors-Indigo-100: #E0EAFF;
+    --Colors-Indigo-200: #C7D7FE;
+    --Colors-Indigo-300: #A4BCFD;
+    --Colors-Indigo-400: #8098F9;
+    --Colors-Indigo-500: #6172F3;
+    --Colors-Indigo-600: #444CE7;
+    --Colors-Indigo-700: #3538CD;
+    --Colors-Indigo-800: #2D31A6;
+    --Colors-Indigo-900: #2D3282;
+    --Colors-Indigo-950: #1F235B;
+
+    /* Purple Colors */
+    --Colors-Purple-25: #FAFAFF;
+    --Colors-Purple-50: #F4F3FF;
+    --Colors-Purple-100: #EBE9FE;
+    --Colors-Purple-200: #D9D6FE;
+    --Colors-Purple-300: #BDB4FE;
+    --Colors-Purple-400: #9B8AFB;
+    --Colors-Purple-500: #7A5AF8;
+    --Colors-Purple-600: #6938EF;
+    --Colors-Purple-700: #5925DC;
+    --Colors-Purple-800: #4A1FB8;
+    --Colors-Purple-900: #3E1C96;
+    --Colors-Purple-950: #27115F;
+
+    /* Pink Colors */
+    --Colors-Pink-25: #FEF6FB;
+    --Colors-Pink-50: #FDF2FA;
+    --Colors-Pink-100: #FCE7F6;
+    --Colors-Pink-200: #FCCEEE;
+    --Colors-Pink-300: #FAA7E0;
+    --Colors-Pink-400: #F670C7;
+    --Colors-Pink-500: #EE46BC;
+    --Colors-Pink-600: #DD2590;
+    --Colors-Pink-700: #C11574;
+    --Colors-Pink-800: #9E165F;
+    --Colors-Pink-900: #851651;
+    --Colors-Pink-950: #4E0D30;
+
+    /* Orange Colors */
+    --Colors-Orange-25: #FEFAF5;
+    --Colors-Orange-50: #FEF6EE;
+    --Colors-Orange-100: #FDEAD7;
+    --Colors-Orange-200: #F9DBAF;
+    --Colors-Orange-300: #F7B27A;
+    --Colors-Orange-400: #F38744;
+    --Colors-Orange-500: #EF6820;
+    --Colors-Orange-600: #E04F16;
+    --Colors-Orange-700: #B93815;
+    --Colors-Orange-800: #932F19;
+    --Colors-Orange-900: #772917;
+    --Colors-Orange-950: #511C10;
+
+    /* ============================================
+       SPACING PRIMITIVES
+       ============================================ */
+    --Spacing-0: 0px;
+    --Spacing-0-5: 2px;
+    --Spacing-1: 4px;
+    --Spacing-1-5: 6px;
+    --Spacing-2: 8px;
+    --Spacing-3: 12px;
+    --Spacing-4: 16px;
+    --Spacing-5: 20px;
+    --Spacing-6: 24px;
+    --Spacing-8: 32px;
+    --Spacing-10: 40px;
+    --Spacing-12: 48px;
+    --Spacing-16: 64px;
+    --Spacing-20: 80px;
+    --Spacing-24: 96px;
+    --Spacing-32: 128px;
+    --Spacing-40: 160px;
+    --Spacing-80: 320px;
+    --Spacing-120: 480px;
+    --Spacing-140: 560px;
+    --Spacing-160: 640px;
+    --Spacing-192: 768px;
+    --Spacing-256: 1024px;
+    --Spacing-320: 1280px;
+
+    /* ============================================
+       RADIUS PRIMITIVES
+       ============================================ */
+    --radius-none: 0px;
+    --radius-xxs: 2px;
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-2xl: 16px;
+    --radius-3xl: 20px;
     --radius-full: 9999px;
+
+    /* ============================================
+       TYPOGRAPHY PRIMITIVES
+       ============================================ */
+    --Font-family-font-family-display: 'Inter', sans-serif;
+    --Font-weight-regular: 400;
   }
-  
+
+  /* ============================================
+     LIGHT MODE SEMANTIC TOKENS (Default)
+     ============================================ */
+  :root {
+    /* Alpha Colors */
+    --Component-colors-Alpha-alpha-white-10: #FFFFFF1A;
+    --Component-colors-Alpha-alpha-white-20: #FFFFFF33;
+    --Component-colors-Alpha-alpha-white-30: #FFFFFF4D;
+    --Component-colors-Alpha-alpha-white-40: #FFFFFF66;
+    --Component-colors-Alpha-alpha-white-90: #FFFFFFE5;
+    --Component-colors-Alpha-alpha-white-100: #FFFFFFFF;
+    --Component-colors-Alpha-alpha-black-100: #000000FF;
+
+    /* Component Colors */
+    --Component-colors-Components-App-store-badges-app-store-badge-border: #A6A6A6FF;
+
+    /* Shadow Colors */
+    --Colors-Effects-Shadows-shadow-xs: #0A0D120D;
+    --Colors-Effects-Shadows-shadow-sm-01: #0A0D121A;
+    --Colors-Effects-Shadows-shadow-lg-01: #0A0D1214;
+    --Colors-Effects-Shadows-shadow-lg-02: #0A0D1208;
+    --Colors-Effects-Shadows-shadow-lg-03: #0A0D120A;
+    --Colors-Effects-Shadows-shadow-xl-01: #0A0D1214;
+    --Colors-Effects-Shadows-shadow-xl-02: #0A0D1208;
+    --Colors-Effects-Shadows-shadow-xl-03: #0A0D120A;
+    --Colors-Effects-Shadows-shadow-2xl-01: #0A0D122E;
+    --Colors-Effects-Shadows-shadow-2xl-02: #0A0D120A;
+    --Colors-Effects-Shadows-shadow-3xl-01: #0A0D1224;
+    --Colors-Effects-Shadows-shadow-3xl-02: #0A0D120A;
+    --Colors-Effects-Shadows-shadow-skeumorphic-inner: #0A0D120D;
+    --Colors-Effects-Shadows-shadow-skeumorphic-inner-border: #0A0D122E;
+
+    /* Text Colors */
+    --Colors-Text-text-primary: var(--Colors-Gray-light-mode-900);
+    --Colors-Text-text-primary-on-brand: var(--Colors-Base-white);
+    --Colors-Text-text-secondary: var(--Colors-Gray-light-mode-700);
+    --Colors-Text-text-secondary-hover: var(--Colors-Gray-light-mode-800);
+    --Colors-Text-text-secondary-on-brand: var(--Colors-Brand-200);
+    --Colors-Text-text-tertiary: var(--Colors-Gray-light-mode-600);
+    --Colors-Text-text-tertiary-hover: var(--Colors-Gray-light-mode-700);
+    --Colors-Text-text-tertiary-on-brand: var(--Colors-Brand-200);
+    --Colors-Text-text-quaternary: var(--Colors-Gray-light-mode-500);
+    --Colors-Text-text-quaternary-on-brand: var(--Colors-Brand-300);
+    --Colors-Text-text-white: var(--Colors-Base-white);
+    --Colors-Text-text-disabled: var(--Colors-Gray-light-mode-500);
+    --Colors-Text-text-placeholder: var(--Colors-Gray-light-mode-500);
+    --Colors-Text-text-brand-primary: var(--Colors-Brand-900);
+    --Colors-Text-text-brand-secondary: var(--Colors-Brand-700);
+    --Colors-Text-text-brand-secondary-hover: var(--Colors-Brand-800);
+    --Colors-Text-text-brand-tertiary: var(--Colors-Brand-600);
+    --Colors-Text-text-error-primary: var(--Colors-Error-600);
+
+    /* Border Colors */
+    --Colors-Border-border-primary: var(--Colors-Gray-light-mode-300);
+    --Colors-Border-border-secondary: var(--Colors-Gray-light-mode-200);
+    --Colors-Border-border-secondary-alt: #00000014;
+    --Colors-Border-border-tertiary: var(--Colors-Gray-light-mode-100);
+    --Colors-Border-border-disabled: var(--Colors-Gray-light-mode-300);
+    --Colors-Border-border-disabled-subtle: var(--Colors-Gray-light-mode-200);
+    --Colors-Border-border-brand: var(--Colors-Brand-500);
+    --Colors-Border-border-brand-alt: var(--Colors-Brand-600);
+    --Colors-Border-border-error: var(--Colors-Error-500);
+    --Colors-Border-border-error-subtle: var(--Colors-Error-300);
+
+    /* Foreground Colors */
+    --Colors-Foreground-fg-primary: var(--Colors-Gray-light-mode-900);
+    --Colors-Foreground-fg-secondary: var(--Colors-Gray-light-mode-700);
+    --Colors-Foreground-fg-quaternary: var(--Colors-Gray-light-mode-400);
+    --Colors-Foreground-fg-quaternary-hover: var(--Colors-Gray-light-mode-500);
+    --Colors-Foreground-fg-white: var(--Colors-Base-white);
+    --Colors-Foreground-fg-disabled: var(--Colors-Gray-light-mode-400);
+    --Colors-Foreground-fg-disabled-subtle: var(--Colors-Gray-light-mode-300);
+    --Colors-Foreground-fg-brand-primary: var(--Colors-Brand-600);
+    --Colors-Foreground-fg-brand-secondary: var(--Colors-Brand-500);
+    --Colors-Foreground-fg-brand-secondary-alt: var(--Colors-Foreground-fg-brand-secondary);
+    --Colors-Foreground-fg-brand-secondary-hover: var(--Colors-Brand-600);
+    --Colors-Foreground-fg-error-secondary: var(--Colors-Error-500);
+    --Colors-Foreground-fg-success-primary: var(--Colors-Success-600);
+    --Colors-Foreground-fg-success-secondary: var(--Colors-Success-500);
+
+    /* Background Colors */
+    --Colors-Background-bg-primary: var(--Colors-Base-white);
+    --Colors-Background-bg-primary-alt: var(--Colors-Base-white);
+    --Colors-Background-bg-primary-hover: var(--Colors-Gray-light-mode-50);
+    --Colors-Background-bg-primary-solid: var(--Colors-Gray-light-mode-950);
+    --Colors-Background-bg-secondary: var(--Colors-Gray-light-mode-50);
+    --Colors-Background-bg-secondary-alt: var(--Colors-Gray-light-mode-50);
+    --Colors-Background-bg-secondary-solid: var(--Colors-Gray-light-mode-600);
+    --Colors-Background-bg-tertiary: var(--Colors-Gray-light-mode-100);
+    --Colors-Background-bg-disabled: var(--Colors-Gray-light-mode-100);
+    --Colors-Background-bg-disabled-subtle: var(--Colors-Gray-light-mode-50);
+    --Colors-Background-bg-brand-primary: var(--Colors-Brand-50);
+    --Colors-Background-bg-brand-primary-alt: var(--Colors-Brand-50);
+    --Colors-Background-bg-brand-secondary: var(--Colors-Brand-100);
+    --Colors-Background-bg-brand-solid: var(--Colors-Brand-600);
+    --Colors-Background-bg-brand-solid-hover: var(--Colors-Brand-700);
+    --Colors-Background-bg-brand-section: var(--Colors-Brand-800);
+    --Colors-Background-bg-brand-section-subtle: var(--Colors-Brand-700);
+    --Colors-Background-bg-error-secondary: var(--Colors-Error-100);
+    --Colors-Background-bg-error-solid: var(--Colors-Error-600);
+    --Colors-Background-bg-warning-secondary: var(--Colors-Warning-100);
+    --Colors-Background-bg-warning-solid: var(--Colors-Warning-600);
+    --Colors-Background-bg-success-secondary: var(--Colors-Success-100);
+    --Colors-Background-bg-success-solid: var(--Colors-Success-600);
+
+    /* Effects */
+    --Colors-Effects-Focus-rings-focus-ring: var(--Colors-Brand-500);
+
+    /* Utility Colors - Gray */
+    --Component-colors-Utility-Gray-utility-gray-50: var(--Colors-Gray-light-mode-50);
+    --Component-colors-Utility-Gray-utility-gray-100: var(--Colors-Gray-light-mode-100);
+    --Component-colors-Utility-Gray-utility-gray-200: var(--Colors-Gray-light-mode-200);
+    --Component-colors-Utility-Gray-utility-gray-400: var(--Colors-Gray-light-mode-400);
+    --Component-colors-Utility-Gray-utility-gray-500: var(--Colors-Gray-light-mode-500);
+    --Component-colors-Utility-Gray-utility-gray-700: var(--Colors-Gray-light-mode-700);
+
+    /* Utility Colors - Brand */
+    --Component-colors-Utility-Brand-utility-brand-50: var(--Colors-Brand-50);
+    --Component-colors-Utility-Brand-utility-brand-100: var(--Colors-Brand-100);
+    --Component-colors-Utility-Brand-utility-brand-200: var(--Colors-Brand-200);
+    --Component-colors-Utility-Brand-utility-brand-300: var(--Colors-Brand-300);
+    --Component-colors-Utility-Brand-utility-brand-400: var(--Colors-Brand-400);
+    --Component-colors-Utility-Brand-utility-brand-500: var(--Colors-Brand-500);
+    --Component-colors-Utility-Brand-utility-brand-600: var(--Colors-Brand-600);
+    --Component-colors-Utility-Brand-utility-brand-600-alt: var(--Colors-Brand-600);
+    --Component-colors-Utility-Brand-utility-brand-700: var(--Colors-Brand-700);
+
+    /* Utility Colors - Error */
+    --Component-colors-Utility-Error-utility-error-50: var(--Colors-Error-50);
+    --Component-colors-Utility-Error-utility-error-100: var(--Colors-Error-100);
+    --Component-colors-Utility-Error-utility-error-200: var(--Colors-Error-200);
+    --Component-colors-Utility-Error-utility-error-400: var(--Colors-Error-400);
+    --Component-colors-Utility-Error-utility-error-500: var(--Colors-Error-500);
+    --Component-colors-Utility-Error-utility-error-600: var(--Colors-Error-600);
+    --Component-colors-Utility-Error-utility-error-700: var(--Colors-Error-700);
+
+    /* Utility Colors - Warning */
+    --Component-colors-Utility-Warning-utility-warning-50: var(--Colors-Warning-50);
+    --Component-colors-Utility-Warning-utility-warning-100: var(--Colors-Warning-100);
+    --Component-colors-Utility-Warning-utility-warning-200: var(--Colors-Warning-200);
+    --Component-colors-Utility-Warning-utility-warning-400: var(--Colors-Warning-400);
+    --Component-colors-Utility-Warning-utility-warning-500: var(--Colors-Warning-500);
+    --Component-colors-Utility-Warning-utility-warning-600: var(--Colors-Warning-600);
+    --Component-colors-Utility-Warning-utility-warning-700: var(--Colors-Warning-700);
+
+    /* Utility Colors - Success */
+    --Component-colors-Utility-Success-utility-success-50: var(--Colors-Success-50);
+    --Component-colors-Utility-Success-utility-success-100: var(--Colors-Success-100);
+    --Component-colors-Utility-Success-utility-success-200: var(--Colors-Success-200);
+    --Component-colors-Utility-Success-utility-success-400: var(--Colors-Success-400);
+    --Component-colors-Utility-Success-utility-success-500: var(--Colors-Success-500);
+    --Component-colors-Utility-Success-utility-success-600: var(--Colors-Success-600);
+    --Component-colors-Utility-Success-utility-success-700: var(--Colors-Success-700);
+
+    /* Utility Colors - Gray Blue */
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-50: var(--Colors-Gray-blue-50);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-100: var(--Colors-Gray-blue-100);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-200: var(--Colors-Gray-blue-200);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-400: var(--Colors-Gray-blue-400);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-500: var(--Colors-Gray-blue-500);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-600: var(--Colors-Gray-blue-600);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-700: var(--Colors-Gray-blue-700);
+
+    /* Utility Colors - Blue Light */
+    --Component-colors-Utility-Blue-light-utility-blue-light-50: var(--Colors-Blue-light-50);
+    --Component-colors-Utility-Blue-light-utility-blue-light-100: var(--Colors-Blue-light-100);
+    --Component-colors-Utility-Blue-light-utility-blue-light-200: var(--Colors-Blue-light-200);
+    --Component-colors-Utility-Blue-light-utility-blue-light-400: var(--Colors-Blue-light-400);
+    --Component-colors-Utility-Blue-light-utility-blue-light-500: var(--Colors-Blue-light-500);
+    --Component-colors-Utility-Blue-light-utility-blue-light-700: var(--Colors-Blue-light-700);
+
+    /* Utility Colors - Blue */
+    --Component-colors-Utility-Blue-utility-blue-50: var(--Colors-Blue-50);
+    --Component-colors-Utility-Blue-utility-blue-100: var(--Colors-Blue-100);
+    --Component-colors-Utility-Blue-utility-blue-200: var(--Colors-Blue-200);
+    --Component-colors-Utility-Blue-utility-blue-400: var(--Colors-Blue-400);
+    --Component-colors-Utility-Blue-utility-blue-500: var(--Colors-Blue-500);
+    --Component-colors-Utility-Blue-utility-blue-700: var(--Colors-Blue-700);
+
+    /* Utility Colors - Indigo */
+    --Component-colors-Utility-Indigo-utility-indigo-50: var(--Colors-Indigo-50);
+    --Component-colors-Utility-Indigo-utility-indigo-100: var(--Colors-Indigo-100);
+    --Component-colors-Utility-Indigo-utility-indigo-200: var(--Colors-Indigo-200);
+    --Component-colors-Utility-Indigo-utility-indigo-400: var(--Colors-Indigo-400);
+    --Component-colors-Utility-Indigo-utility-indigo-500: var(--Colors-Indigo-500);
+    --Component-colors-Utility-Indigo-utility-indigo-700: var(--Colors-Indigo-700);
+
+    /* Utility Colors - Purple */
+    --Component-colors-Utility-Purple-utility-purple-50: var(--Colors-Purple-50);
+    --Component-colors-Utility-Purple-utility-purple-100: var(--Colors-Purple-100);
+    --Component-colors-Utility-Purple-utility-purple-200: var(--Colors-Purple-200);
+    --Component-colors-Utility-Purple-utility-purple-400: var(--Colors-Purple-400);
+    --Component-colors-Utility-Purple-utility-purple-500: var(--Colors-Purple-500);
+    --Component-colors-Utility-Purple-utility-purple-700: var(--Colors-Purple-700);
+
+    /* Utility Colors - Pink */
+    --Component-colors-Utility-Pink-utility-pink-50: var(--Colors-Pink-50);
+    --Component-colors-Utility-Pink-utility-pink-100: var(--Colors-Pink-100);
+    --Component-colors-Utility-Pink-utility-pink-200: var(--Colors-Pink-200);
+    --Component-colors-Utility-Pink-utility-pink-400: var(--Colors-Pink-400);
+    --Component-colors-Utility-Pink-utility-pink-500: var(--Colors-Pink-500);
+    --Component-colors-Utility-Pink-utility-pink-700: var(--Colors-Pink-700);
+
+    /* Utility Colors - Orange */
+    --Component-colors-Utility-Orange-utility-orange-50: var(--Colors-Orange-50);
+    --Component-colors-Utility-Orange-utility-orange-100: var(--Colors-Orange-100);
+    --Component-colors-Utility-Orange-utility-orange-200: var(--Colors-Orange-200);
+    --Component-colors-Utility-Orange-utility-orange-400: var(--Colors-Orange-400);
+    --Component-colors-Utility-Orange-utility-orange-500: var(--Colors-Orange-500);
+    --Component-colors-Utility-Orange-utility-orange-700: var(--Colors-Orange-700);
+
+    /* Component Specific Colors */
+    --Component-colors-Components-Buttons-button-primary-icon: var(--Colors-Brand-300);
+    --Component-colors-Components-Buttons-button-primary-icon-hover: var(--Colors-Brand-200);
+    --Component-colors-Components-Footers-footer-button-fg: var(--Colors-Brand-200);
+    --Component-colors-Components-Footers-footer-button-fg-hover: var(--Colors-Base-white);
+    --Component-colors-Components-Icons-Icons-icon-fg-brand: var(--Colors-Brand-600);
+    --Component-colors-Components-Icons-Icons-icon-fg-brand-on-brand: var(--Colors-Brand-200);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-brand: var(--Colors-Brand-600);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-gray: var(--Colors-Gray-light-mode-500);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-error: var(--Colors-Error-600);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-warning: var(--Colors-Warning-600);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-success: var(--Colors-Success-600);
+    --Component-colors-Components-Mockups-screen-mockup-border: var(--Colors-Gray-light-mode-900);
+    --Component-colors-Components-Tooltips-tooltip-supporting-text: var(--Colors-Gray-light-mode-300);
+
+    /* Spacing Semantic Tokens */
+    --spacing-none: var(--Spacing-0);
+    --spacing-xxs: var(--Spacing-0-5);
+    --spacing-xs: var(--Spacing-1);
+    --spacing-sm: var(--Spacing-1-5);
+    --spacing-md: var(--Spacing-2);
+    --spacing-lg: var(--Spacing-3);
+    --spacing-xl: var(--Spacing-4);
+    --spacing-2xl: var(--Spacing-5);
+    --spacing-3xl: var(--Spacing-6);
+    --spacing-4xl: var(--Spacing-8);
+    --spacing-5xl: var(--Spacing-10);
+    --spacing-6xl: var(--Spacing-12);
+    --spacing-7xl: var(--Spacing-16);
+    --spacing-8xl: var(--Spacing-20);
+    --spacing-9xl: var(--Spacing-24);
+    --spacing-10xl: var(--Spacing-32);
+    --spacing-11xl: var(--Spacing-40);
+
+    /* Width Tokens */
+    --width-xxs: var(--Spacing-80);
+    --width-sm: var(--Spacing-120);
+    --width-md: var(--Spacing-140);
+    --width-lg: var(--Spacing-160);
+    --width-xl: var(--Spacing-192);
+    --width-2xl: var(--Spacing-256);
+
+    /* Container Tokens */
+    --container-padding-mobile: var(--Spacing-4);
+    --container-padding-desktop: var(--Spacing-8);
+    --container-max-width-desktop: var(--Spacing-320);
+  }
+
+  /* ============================================
+     DARK MODE SEMANTIC TOKENS
+     ============================================ */
+  .dark {
+    /* Alpha Colors */
+    --Component-colors-Alpha-alpha-white-10: #0C0E121A;
+    --Component-colors-Alpha-alpha-white-20: #0C0E1233;
+    --Component-colors-Alpha-alpha-white-30: #0C0E124D;
+    --Component-colors-Alpha-alpha-white-40: #0C0E1266;
+    --Component-colors-Alpha-alpha-white-90: #0C0E12E5;
+    --Component-colors-Alpha-alpha-black-100: #FFFFFFFF;
+    --Component-colors-Alpha-alpha-white-100: var(--Colors-Gray-dark-mode-950);
+
+    /* Shadow Colors (transparent in dark mode) */
+    --Colors-Effects-Shadows-shadow-xs: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-sm-01: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-lg-01: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-lg-02: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-lg-03: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-xl-01: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-xl-02: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-xl-03: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-2xl-01: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-2xl-02: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-3xl-01: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-3xl-02: var(--Colors-Base-transparent);
+    --Colors-Effects-Shadows-shadow-skeumorphic-inner: #0C0E120D;
+    --Colors-Effects-Shadows-shadow-skeumorphic-inner-border: #0C0E122E;
+
+    /* Text Colors */
+    --Colors-Text-text-primary: var(--Colors-Gray-dark-mode-50);
+    --Colors-Text-text-primary-on-brand: var(--Colors-Gray-dark-mode-50);
+    --Colors-Text-text-secondary: var(--Colors-Gray-dark-mode-300);
+    --Colors-Text-text-secondary-hover: var(--Colors-Gray-dark-mode-200);
+    --Colors-Text-text-secondary-on-brand: var(--Colors-Gray-dark-mode-300);
+    --Colors-Text-text-tertiary: var(--Colors-Gray-dark-mode-400);
+    --Colors-Text-text-tertiary-hover: var(--Colors-Gray-dark-mode-300);
+    --Colors-Text-text-tertiary-on-brand: var(--Colors-Gray-dark-mode-400);
+    --Colors-Text-text-quaternary: var(--Colors-Gray-dark-mode-400);
+    --Colors-Text-text-quaternary-on-brand: var(--Colors-Gray-dark-mode-400);
+    --Colors-Text-text-white: var(--Colors-Base-white);
+    --Colors-Text-text-disabled: var(--Colors-Gray-dark-mode-500);
+    --Colors-Text-text-placeholder: var(--Colors-Gray-dark-mode-500);
+    --Colors-Text-text-brand-primary: var(--Colors-Gray-dark-mode-50);
+    --Colors-Text-text-brand-secondary: var(--Colors-Gray-dark-mode-300);
+    --Colors-Text-text-brand-secondary-hover: var(--Colors-Gray-dark-mode-200);
+    --Colors-Text-text-brand-tertiary: var(--Colors-Gray-dark-mode-400);
+    --Colors-Text-text-error-primary: var(--Colors-Error-400);
+
+    /* Border Colors */
+    --Colors-Border-border-primary: var(--Colors-Gray-dark-mode-700);
+    --Colors-Border-border-secondary: var(--Colors-Gray-dark-mode-800);
+    --Colors-Border-border-secondary-alt: var(--Colors-Gray-dark-mode-700);
+    --Colors-Border-border-tertiary: var(--Colors-Gray-dark-mode-800);
+    --Colors-Border-border-disabled: var(--Colors-Gray-dark-mode-700);
+    --Colors-Border-border-disabled-subtle: var(--Colors-Gray-dark-mode-800);
+    --Colors-Border-border-brand: var(--Colors-Brand-400);
+    --Colors-Border-border-brand-alt: var(--Colors-Gray-dark-mode-700);
+    --Colors-Border-border-error: var(--Colors-Error-400);
+    --Colors-Border-border-error-subtle: var(--Colors-Error-500);
+
+    /* Foreground Colors */
+    --Colors-Foreground-fg-primary: var(--Colors-Base-white);
+    --Colors-Foreground-fg-secondary: var(--Colors-Gray-dark-mode-300);
+    --Colors-Foreground-fg-quaternary: var(--Colors-Gray-dark-mode-600);
+    --Colors-Foreground-fg-quaternary-hover: var(--Colors-Gray-dark-mode-500);
+    --Colors-Foreground-fg-white: var(--Colors-Base-white);
+    --Colors-Foreground-fg-disabled: var(--Colors-Gray-dark-mode-500);
+    --Colors-Foreground-fg-disabled-subtle: var(--Colors-Gray-dark-mode-600);
+    --Colors-Foreground-fg-brand-primary: var(--Colors-Brand-500);
+    --Colors-Foreground-fg-brand-secondary: var(--Colors-Brand-500);
+    --Colors-Foreground-fg-brand-secondary-alt: var(--Colors-Gray-dark-mode-600);
+    --Colors-Foreground-fg-brand-secondary-hover: var(--Colors-Gray-dark-mode-500);
+    --Colors-Foreground-fg-error-secondary: var(--Colors-Error-400);
+    --Colors-Foreground-fg-success-primary: var(--Colors-Success-500);
+    --Colors-Foreground-fg-success-secondary: var(--Colors-Success-400);
+
+    /* Background Colors */
+    --Colors-Background-bg-primary: var(--Colors-Gray-dark-mode-950);
+    --Colors-Background-bg-primary-alt: var(--Colors-Background-bg-secondary);
+    --Colors-Background-bg-primary-hover: var(--Colors-Gray-dark-mode-800);
+    --Colors-Background-bg-primary-solid: var(--Colors-Background-bg-secondary);
+    --Colors-Background-bg-secondary: var(--Colors-Gray-dark-mode-900);
+    --Colors-Background-bg-secondary-alt: var(--Colors-Background-bg-primary);
+    --Colors-Background-bg-secondary-solid: var(--Colors-Gray-dark-mode-600);
+    --Colors-Background-bg-tertiary: var(--Colors-Gray-dark-mode-800);
+    --Colors-Background-bg-disabled: var(--Colors-Gray-dark-mode-800);
+    --Colors-Background-bg-disabled-subtle: var(--Colors-Gray-dark-mode-900);
+    --Colors-Background-bg-brand-primary: var(--Colors-Brand-500);
+    --Colors-Background-bg-brand-primary-alt: var(--Colors-Background-bg-secondary);
+    --Colors-Background-bg-brand-secondary: var(--Colors-Brand-600);
+    --Colors-Background-bg-brand-solid: var(--Colors-Brand-600);
+    --Colors-Background-bg-brand-solid-hover: var(--Colors-Brand-500);
+    --Colors-Background-bg-brand-section: var(--Colors-Background-bg-secondary);
+    --Colors-Background-bg-brand-section-subtle: var(--Colors-Background-bg-primary);
+    --Colors-Background-bg-error-secondary: var(--Colors-Error-600);
+    --Colors-Background-bg-error-solid: var(--Colors-Error-600);
+    --Colors-Background-bg-warning-secondary: var(--Colors-Warning-600);
+    --Colors-Background-bg-warning-solid: var(--Colors-Warning-600);
+    --Colors-Background-bg-success-secondary: var(--Colors-Success-600);
+    --Colors-Background-bg-success-solid: var(--Colors-Success-600);
+
+    /* Effects */
+    --Colors-Effects-Focus-rings-focus-ring: var(--Colors-Brand-500);
+
+    /* Utility Colors - Gray */
+    --Component-colors-Utility-Gray-utility-gray-50: var(--Colors-Gray-dark-mode-900);
+    --Component-colors-Utility-Gray-utility-gray-100: var(--Colors-Gray-dark-mode-800);
+    --Component-colors-Utility-Gray-utility-gray-200: var(--Colors-Gray-dark-mode-700);
+    --Component-colors-Utility-Gray-utility-gray-400: var(--Colors-Gray-dark-mode-600);
+    --Component-colors-Utility-Gray-utility-gray-500: var(--Colors-Gray-dark-mode-500);
+    --Component-colors-Utility-Gray-utility-gray-700: var(--Colors-Gray-dark-mode-300);
+
+    /* Utility Colors - Brand */
+    --Component-colors-Utility-Brand-utility-brand-50: var(--Colors-Brand-950);
+    --Component-colors-Utility-Brand-utility-brand-100: var(--Colors-Brand-900);
+    --Component-colors-Utility-Brand-utility-brand-200: var(--Colors-Brand-800);
+    --Component-colors-Utility-Brand-utility-brand-300: var(--Colors-Brand-700);
+    --Component-colors-Utility-Brand-utility-brand-400: var(--Colors-Brand-600);
+    --Component-colors-Utility-Brand-utility-brand-500: var(--Colors-Brand-500);
+    --Component-colors-Utility-Brand-utility-brand-600: var(--Colors-Brand-400);
+    --Component-colors-Utility-Brand-utility-brand-600-alt: var(--Component-colors-Utility-Gray-utility-gray-600);
+    --Component-colors-Utility-Brand-utility-brand-700: var(--Colors-Brand-300);
+
+    /* Utility Colors - Error */
+    --Component-colors-Utility-Error-utility-error-50: var(--Colors-Error-950);
+    --Component-colors-Utility-Error-utility-error-100: var(--Colors-Error-900);
+    --Component-colors-Utility-Error-utility-error-200: var(--Colors-Error-800);
+    --Component-colors-Utility-Error-utility-error-400: var(--Colors-Error-600);
+    --Component-colors-Utility-Error-utility-error-500: var(--Colors-Error-500);
+    --Component-colors-Utility-Error-utility-error-600: var(--Colors-Error-400);
+    --Component-colors-Utility-Error-utility-error-700: var(--Colors-Error-300);
+
+    /* Utility Colors - Warning */
+    --Component-colors-Utility-Warning-utility-warning-50: var(--Colors-Warning-950);
+    --Component-colors-Utility-Warning-utility-warning-100: var(--Colors-Warning-900);
+    --Component-colors-Utility-Warning-utility-warning-200: var(--Colors-Warning-800);
+    --Component-colors-Utility-Warning-utility-warning-400: var(--Colors-Warning-600);
+    --Component-colors-Utility-Warning-utility-warning-500: var(--Colors-Warning-500);
+    --Component-colors-Utility-Warning-utility-warning-600: var(--Colors-Warning-400);
+    --Component-colors-Utility-Warning-utility-warning-700: var(--Colors-Warning-300);
+
+    /* Utility Colors - Success */
+    --Component-colors-Utility-Success-utility-success-50: var(--Colors-Success-950);
+    --Component-colors-Utility-Success-utility-success-100: var(--Colors-Success-900);
+    --Component-colors-Utility-Success-utility-success-200: var(--Colors-Success-800);
+    --Component-colors-Utility-Success-utility-success-400: var(--Colors-Success-600);
+    --Component-colors-Utility-Success-utility-success-500: var(--Colors-Success-500);
+    --Component-colors-Utility-Success-utility-success-600: var(--Colors-Success-400);
+    --Component-colors-Utility-Success-utility-success-700: var(--Colors-Success-300);
+
+    /* Utility Colors - Gray Blue */
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-50: var(--Colors-Gray-blue-950);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-100: var(--Colors-Gray-blue-900);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-200: var(--Colors-Gray-blue-800);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-400: var(--Colors-Gray-blue-600);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-500: var(--Colors-Gray-blue-500);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-600: var(--Colors-Gray-blue-400);
+    --Component-colors-Utility-Gray-blue-utility-gray-blue-700: var(--Colors-Gray-blue-300);
+
+    /* Utility Colors - Blue Light */
+    --Component-colors-Utility-Blue-light-utility-blue-light-50: var(--Colors-Blue-light-950);
+    --Component-colors-Utility-Blue-light-utility-blue-light-100: var(--Colors-Blue-light-900);
+    --Component-colors-Utility-Blue-light-utility-blue-light-200: var(--Colors-Blue-light-800);
+    --Component-colors-Utility-Blue-light-utility-blue-light-400: var(--Colors-Blue-light-600);
+    --Component-colors-Utility-Blue-light-utility-blue-light-500: var(--Colors-Blue-light-500);
+    --Component-colors-Utility-Blue-light-utility-blue-light-700: var(--Colors-Blue-light-300);
+
+    /* Utility Colors - Blue */
+    --Component-colors-Utility-Blue-utility-blue-50: var(--Colors-Blue-950);
+    --Component-colors-Utility-Blue-utility-blue-100: var(--Colors-Blue-900);
+    --Component-colors-Utility-Blue-utility-blue-200: var(--Colors-Blue-800);
+    --Component-colors-Utility-Blue-utility-blue-400: var(--Colors-Blue-600);
+    --Component-colors-Utility-Blue-utility-blue-500: var(--Colors-Blue-500);
+    --Component-colors-Utility-Blue-utility-blue-700: var(--Colors-Blue-300);
+
+    /* Utility Colors - Indigo */
+    --Component-colors-Utility-Indigo-utility-indigo-50: var(--Colors-Indigo-950);
+    --Component-colors-Utility-Indigo-utility-indigo-100: var(--Colors-Indigo-900);
+    --Component-colors-Utility-Indigo-utility-indigo-200: var(--Colors-Indigo-800);
+    --Component-colors-Utility-Indigo-utility-indigo-400: var(--Colors-Indigo-600);
+    --Component-colors-Utility-Indigo-utility-indigo-500: var(--Colors-Indigo-500);
+    --Component-colors-Utility-Indigo-utility-indigo-700: var(--Colors-Indigo-300);
+
+    /* Utility Colors - Purple */
+    --Component-colors-Utility-Purple-utility-purple-50: var(--Colors-Purple-950);
+    --Component-colors-Utility-Purple-utility-purple-100: var(--Colors-Purple-900);
+    --Component-colors-Utility-Purple-utility-purple-200: var(--Colors-Purple-800);
+    --Component-colors-Utility-Purple-utility-purple-400: var(--Colors-Purple-600);
+    --Component-colors-Utility-Purple-utility-purple-500: var(--Colors-Purple-500);
+    --Component-colors-Utility-Purple-utility-purple-700: var(--Colors-Purple-300);
+
+    /* Utility Colors - Pink */
+    --Component-colors-Utility-Pink-utility-pink-50: var(--Colors-Pink-950);
+    --Component-colors-Utility-Pink-utility-pink-100: var(--Colors-Pink-900);
+    --Component-colors-Utility-Pink-utility-pink-200: var(--Colors-Pink-800);
+    --Component-colors-Utility-Pink-utility-pink-400: var(--Colors-Pink-600);
+    --Component-colors-Utility-Pink-utility-pink-500: var(--Colors-Pink-500);
+    --Component-colors-Utility-Pink-utility-pink-700: var(--Colors-Pink-300);
+
+    /* Utility Colors - Orange */
+    --Component-colors-Utility-Orange-utility-orange-50: var(--Colors-Orange-950);
+    --Component-colors-Utility-Orange-utility-orange-100: var(--Colors-Orange-900);
+    --Component-colors-Utility-Orange-utility-orange-200: var(--Colors-Orange-800);
+    --Component-colors-Utility-Orange-utility-orange-400: var(--Colors-Orange-600);
+    --Component-colors-Utility-Orange-utility-orange-500: var(--Colors-Orange-500);
+    --Component-colors-Utility-Orange-utility-orange-700: var(--Colors-Orange-300);
+
+    /* Component Specific Colors */
+    --Component-colors-Components-App-store-badges-app-store-badge-border: var(--Colors-Base-white);
+    --Component-colors-Components-Buttons-button-primary-icon: var(--Colors-Brand-300);
+    --Component-colors-Components-Buttons-button-primary-icon-hover: var(--Colors-Brand-200);
+    --Component-colors-Components-Footers-footer-button-fg: var(--Colors-Gray-dark-mode-300);
+    --Component-colors-Components-Footers-footer-button-fg-hover: var(--Colors-Gray-dark-mode-100);
+    --Component-colors-Components-Icons-Icons-icon-fg-brand: var(--Colors-Gray-dark-mode-400);
+    --Component-colors-Components-Icons-Icons-icon-fg-brand-on-brand: var(--Colors-Gray-dark-mode-400);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-brand: var(--Colors-Brand-200);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-gray: var(--Colors-Gray-dark-mode-200);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-error: var(--Colors-Error-200);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-warning: var(--Colors-Warning-200);
+    --Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-success: var(--Colors-Success-200);
+    --Component-colors-Components-Mockups-screen-mockup-border: var(--Colors-Gray-dark-mode-700);
+    --Component-colors-Components-Tooltips-tooltip-supporting-text: var(--Colors-Gray-dark-mode-300);
+  }
+
+  /* ============================================
+     GLOBAL RESETS
+     ============================================ */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
-    font-family: var(--font-inter), sans-serif;
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    font-family: var(--Font-family-font-family-display);
+    background-color: var(--Colors-Background-bg-primary);
+    color: var(--Colors-Text-text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
+
+  /* ============================================
+     LEGACY COMPATIBILITY ALIASES
+     These map old variable names to new design tokens
+     for backward compatibility with existing components
+     ============================================ */
+  :root {
+    --color-bg-primary: var(--Colors-Background-bg-primary);
+    --color-bg-secondary: var(--Colors-Background-bg-secondary);
+    --color-bg-tertiary: var(--Colors-Background-bg-tertiary);
+    --color-brand: var(--Colors-Brand-600);
+    --color-brand-light: var(--Colors-Brand-300);
+    --color-brand-dark: var(--Colors-Brand-700);
+    --color-text-primary: var(--Colors-Text-text-primary);
+    --color-text-secondary: var(--Colors-Text-text-secondary);
+    --color-text-tertiary: var(--Colors-Text-text-tertiary);
+    --color-text-muted: var(--Colors-Text-text-quaternary);
+    --color-success: var(--Colors-Success-600);
+    --color-success-light: var(--Colors-Success-200);
+    --color-border: var(--Colors-Border-border-primary);
+    --color-border-subtle: var(--Colors-Border-border-tertiary);
+    --color-border-secondary: var(--Colors-Border-border-secondary);
+    --color-border-dark: var(--Colors-Gray-light-mode-600);
+    --color-accent-purple: var(--Colors-Brand-200);
+    --color-focus-ring: var(--Colors-Effects-Focus-rings-focus-ring);
+    --color-disabled-bg: var(--Colors-Background-bg-disabled);
+    --color-disabled-border: var(--Colors-Border-border-disabled);
+    --color-disabled-text: var(--Colors-Text-text-disabled);
+    --color-secondary-bg: var(--Colors-Background-bg-secondary);
+    --color-link-primary: var(--Colors-Brand-700);
+    --color-link-primary-hover: var(--Colors-Brand-800);
+    --color-link-gray: var(--Colors-Gray-light-mode-600);
+  }
+
+  /* ============================================
+     BUTTON SIZE UTILITIES
+     ============================================ */
+  .btn-size-sm {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: 14px;
+    gap: var(--spacing-xs);
+    border-radius: var(--radius-md);
+  }
+
+  .btn-size-md {
+    padding: var(--spacing-lg) var(--spacing-3xl);
+    font-size: 14px;
+    gap: var(--spacing-xs);
+    border-radius: var(--radius-md);
+  }
+
+  .btn-size-lg {
+    padding: var(--spacing-lg) 28px;
+    font-size: 16px;
+    gap: var(--spacing-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .btn-size-xl {
+    padding: var(--spacing-lg) var(--spacing-4xl);
+    font-size: 16px;
+    gap: var(--spacing-sm);
+    border-radius: var(--radius-md);
+  }
+
+  /* ============================================
+     PRIMARY BUTTON
+     ============================================ */
   .btn-primary {
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-brand);
-    color: white;
-    border-radius: 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
-    transition: all 0.2s;
+    font-family: var(--Font-family-font-family-display);
+    background-color: var(--Colors-Background-bg-brand-solid);
+    color: var(--Colors-Text-text-primary-on-brand);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
-  
+
   .btn-primary:hover {
-    background-color: color-mix(in srgb, var(--color-brand) 90%, transparent);
+    background-color: var(--Colors-Background-bg-brand-solid-hover);
   }
-  
+
+  .btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 4px var(--Colors-Effects-Focus-rings-focus-ring), 0px 0px 0px 2px var(--Colors-Base-white);
+  }
+
+  .btn-primary:disabled {
+    background-color: var(--Colors-Background-bg-disabled);
+    color: var(--Colors-Text-text-disabled);
+    border-color: var(--Colors-Border-border-disabled);
+    cursor: not-allowed;
+  }
+
+  /* ============================================
+     SECONDARY BUTTON
+     ============================================ */
   .btn-secondary {
-    padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    border: 2px solid var(--color-text-secondary);
-    color: var(--color-text-secondary);
-    border-radius: 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
-    transition: all 0.2s;
+    font-family: var(--Font-family-font-family-display);
+    background-color: transparent;
+    color: var(--Colors-Text-text-secondary);
+    border: 2px solid var(--Colors-Border-border-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
-  
+
   .btn-secondary:hover {
-    border-color: var(--color-text-primary);
-    color: var(--color-text-primary);
+    background-color: var(--Colors-Background-bg-primary-hover);
+    border-color: var(--Colors-Border-border-primary);
+    color: var(--Colors-Text-text-secondary-hover);
   }
-  
+
+  .btn-secondary:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 4px var(--Colors-Effects-Focus-rings-focus-ring), 0px 0px 0px 2px var(--Colors-Base-white);
+  }
+
+  .btn-secondary:disabled {
+    border-color: var(--Colors-Border-border-disabled);
+    color: var(--Colors-Text-text-disabled);
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+
+  /* ============================================
+     TERTIARY BUTTON
+     ============================================ */
+  .btn-tertiary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: var(--Font-family-font-family-display);
+    background-color: transparent;
+    color: var(--Colors-Text-text-secondary);
+    border: 2px solid var(--Colors-Border-border-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-tertiary:hover {
+    background-color: var(--Colors-Background-bg-primary-hover);
+    border-color: var(--Colors-Border-border-primary);
+    color: var(--Colors-Text-text-secondary-hover);
+  }
+
+  .btn-tertiary:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 0px 4px var(--Colors-Effects-Focus-rings-focus-ring), 0px 0px 0px 2px var(--Colors-Base-white);
+  }
+
+  .btn-tertiary:disabled {
+    border-color: var(--Colors-Border-border-disabled);
+    color: var(--Colors-Text-text-disabled);
+    background-color: transparent;
+    cursor: not-allowed;
+  }
+
+  /* ============================================
+     LINK COLOR BUTTON
+     ============================================ */
+  .btn-link-color {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: var(--Font-family-font-family-display);
+    background-color: transparent;
+    color: var(--Colors-Text-text-brand-secondary);
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    gap: var(--spacing-xs);
+  }
+
+  .btn-link-color:hover {
+    color: var(--Colors-Text-text-brand-secondary-hover);
+  }
+
+  .btn-link-color:focus-visible {
+    outline: none;
+    border-radius: var(--radius-xs);
+    box-shadow: 0px 0px 0px 4px var(--Colors-Effects-Focus-rings-focus-ring), 0px 0px 0px 2px var(--Colors-Base-white);
+  }
+
+  .btn-link-color:disabled {
+    color: var(--Colors-Text-text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* ============================================
+     LINK GRAY BUTTON
+     ============================================ */
+  .btn-link-gray {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: var(--Font-family-font-family-display);
+    background-color: transparent;
+    color: var(--Colors-Text-text-tertiary);
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    gap: var(--spacing-xs);
+  }
+
+  .btn-link-gray:hover {
+    color: var(--Colors-Text-text-brand-secondary);
+  }
+
+  .btn-link-gray:focus-visible {
+    outline: none;
+    border-radius: var(--radius-xs);
+    box-shadow: 0px 0px 0px 4px var(--Colors-Effects-Focus-rings-focus-ring), 0px 0px 0px 2px var(--Colors-Base-white);
+  }
+
+  .btn-link-gray:disabled {
+    color: var(--Colors-Text-text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* ============================================
+     LOADING STATE
+     ============================================ */
+  .btn-loading {
+    position: relative;
+    color: transparent;
+  }
+
+  .btn-loading-spinner {
+    display: inline-flex;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ============================================
+     CARD COMPONENTS
+     ============================================ */
   .card {
-    background-color: var(--color-bg-secondary);
-    border-radius: 1rem;
-    padding: 2rem;
+    background-color: var(--Colors-Background-bg-secondary);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-4xl);
   }
-  
+
+  .card-shadow-lg {
+    box-shadow: 0px 3px 3px var(--Colors-Effects-Shadows-shadow-lg-01),
+      0px 8px 8px var(--Colors-Effects-Shadows-shadow-lg-02),
+      0px 20px 24px var(--Colors-Effects-Shadows-shadow-lg-03);
+  }
+
+  .card-shadow-md {
+    box-shadow: 0px 2px 2px var(--Colors-Effects-Shadows-shadow-xs),
+      0px 4px 6px var(--Colors-Effects-Shadows-shadow-sm-01),
+      0px 12px 16px var(--Colors-Effects-Shadows-shadow-lg-01);
+  }
+
+  /* ============================================
+     FEATURED ICON COMPONENTS
+     ============================================ */
+
+  /* Base Featured Icon Sizes */
+  .featured-icon-xs {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-icon-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-icon-md {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-icon-lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-icon-xl {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-icon-2xl {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Light Style - Light background with colored border and icon */
+  .featured-icon-brand-light {
+    background-color: var(--Colors-Background-bg-brand-secondary);
+    border: none;
+    border-radius: var(--radius-full);
+  }
+
+  .featured-icon-brand-light svg {
+    color: var(--Colors-Brand-600);
+    stroke: var(--Colors-Brand-600);
+  }
+
+  .featured-icon-gray-light {
+    background-color: var(--Colors-Gray-light-mode-50);
+    border: 2px solid var(--Colors-Gray-light-mode-500);
+  }
+
+  .featured-icon-gray-light svg {
+    color: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-gray);
+    stroke: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-gray);
+  }
+
+  .featured-icon-error-light {
+    background-color: var(--Colors-Error-50);
+    border: 2px solid var(--Colors-Error-600);
+  }
+
+  .featured-icon-error-light svg {
+    color: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-error);
+    stroke: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-error);
+  }
+
+  .featured-icon-warning-light {
+    background-color: var(--Colors-Warning-50);
+    border: 2px solid var(--Colors-Warning-600);
+  }
+
+  .featured-icon-warning-light svg {
+    color: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-warning);
+    stroke: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-warning);
+  }
+
+  .featured-icon-success-light {
+    background-color: var(--Colors-Success-50);
+    border: 2px solid var(--Colors-Success-600);
+  }
+
+  .featured-icon-success-light svg {
+    color: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-success);
+    stroke: var(--Component-colors-Components-Icons-Featured-icons-featured-icon-light-fg-success);
+  }
+
+  /* Modern Style - Solid colored background with light border and white icon */
+  .featured-icon-brand-modern {
+    background-color: var(--Colors-Brand-600);
+    border: 2px solid var(--Colors-Brand-200);
+  }
+
+  .featured-icon-brand-modern svg {
+    color: var(--Colors-Base-white);
+    stroke: var(--Colors-Base-white);
+  }
+
+  .featured-icon-gray-modern {
+    background-color: var(--Colors-Background-bg-primary);
+    border: 2px solid var(--Colors-Border-border-primary);
+  }
+
+  .featured-icon-gray-modern svg {
+    color: var(--Colors-Foreground-fg-secondary);
+  }
+
+  .featured-icon-gray-modern svg path {
+    stroke: var(--Colors-Foreground-fg-secondary);
+  }
+
+  .featured-icon-error-modern {
+    background-color: var(--Colors-Error-600);
+    border: 2px solid var(--Colors-Error-200);
+  }
+
+  .featured-icon-error-modern svg {
+    color: var(--Colors-Base-white);
+    stroke: var(--Colors-Base-white);
+  }
+
+  .featured-icon-warning-modern {
+    background-color: var(--Colors-Warning-600);
+    border: 2px solid var(--Colors-Warning-200);
+  }
+
+  .featured-icon-warning-modern svg {
+    color: var(--Colors-Base-white);
+    stroke: var(--Colors-Base-white);
+  }
+
+  .featured-icon-success-modern {
+    background-color: var(--Colors-Success-600);
+    border: 2px solid var(--Colors-Success-200);
+  }
+
+  .featured-icon-success-modern svg {
+    color: var(--Colors-Base-white);
+    stroke: var(--Colors-Base-white);
+  }
+
+  /* Outline Style - Transparent background with colored border and icon */
+  .featured-icon-brand-outline {
+    background-color: var(--Colors-Base-transparent);
+    border: 2px solid var(--Colors-Brand-600);
+  }
+
+  .featured-icon-brand-outline svg {
+    color: var(--Colors-Brand-600);
+    stroke: var(--Colors-Brand-600);
+  }
+
+  .featured-icon-gray-outline {
+    background-color: var(--Colors-Base-transparent);
+    border: 2px solid var(--Colors-Gray-light-mode-500);
+  }
+
+  .featured-icon-gray-outline svg {
+    color: var(--Colors-Gray-light-mode-500);
+    stroke: var(--Colors-Gray-light-mode-500);
+  }
+
+  .featured-icon-error-outline {
+    background-color: var(--Colors-Base-transparent);
+    border: 2px solid var(--Colors-Error-600);
+  }
+
+  .featured-icon-error-outline svg {
+    color: var(--Colors-Error-600);
+    stroke: var(--Colors-Error-600);
+  }
+
+  .featured-icon-warning-outline {
+    background-color: var(--Colors-Base-transparent);
+    border: 2px solid var(--Colors-Warning-600);
+  }
+
+  .featured-icon-warning-outline svg {
+    color: var(--Colors-Warning-600);
+    stroke: var(--Colors-Warning-600);
+  }
+
+  .featured-icon-success-outline {
+    background-color: var(--Colors-Base-transparent);
+    border: 2px solid var(--Colors-Success-600);
+  }
+
+  .featured-icon-success-outline svg {
+    color: var(--Colors-Success-600);
+    stroke: var(--Colors-Success-600);
+  }
+
+  /* Dark mode adjustments */
+  :is(.dark .featured-icon-brand-light svg) {
+    color: var(--Colors-Brand-200);
+    stroke: var(--Colors-Brand-200);
+  }
+
+  :is(.dark .featured-icon-gray-light) {
+    background-color: var(--Colors-Gray-dark-mode-950);
+    border-color: var(--Colors-Gray-dark-mode-200);
+  }
+
+  /* Dark mode: semantic variables auto-adjust, no override needed */
+
+  :is(.dark .featured-icon-gray-outline) {
+    border-color: var(--Colors-Gray-dark-mode-200);
+  }
+
+  :is(.dark .featured-icon-gray-outline svg) {
+    color: var(--Colors-Gray-dark-mode-200);
+    stroke: var(--Colors-Gray-dark-mode-200);
+  }
+
+  /* Legacy compatibility aliases */
+  .feature-icon-light {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    border: 2px solid var(--Colors-Border-border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Colors-Background-bg-secondary);
+  }
+
+  .product-icon-purple {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    border: 2px solid var(--Colors-Brand-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Colors-Background-bg-brand-solid);
+  }
+
+  .product-icon-purple svg {
+    color: var(--Colors-Base-white);
+    stroke: var(--Colors-Base-white);
+  }
+
+  /* ============================================
+     SECTION CONTAINER
+     ============================================ */
   .section-container {
     max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 4rem 1rem;
+    padding: var(--spacing-7xl) var(--spacing-xl);
   }
-  
+
   @media (min-width: 640px) {
     .section-container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: var(--spacing-3xl);
+      padding-right: var(--spacing-3xl);
     }
   }
-  
+
   @media (min-width: 1024px) {
     .section-container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-left: var(--spacing-4xl);
+      padding-right: var(--spacing-4xl);
+      padding-top: var(--spacing-8xl);
+      padding-bottom: var(--spacing-8xl);
     }
   }
 }
 
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes accordion-down {
   from {
     height: 0;
     opacity: 0;
   }
+
   to {
     height: var(--radix-accordion-content-height);
     opacity: 1;
@@ -126,6 +1335,7 @@
     height: var(--radix-accordion-content-height);
     opacity: 1;
   }
+
   to {
     height: 0;
     opacity: 0;

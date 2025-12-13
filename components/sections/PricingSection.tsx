@@ -56,86 +56,93 @@ const timeline = [
 
 export default function PricingSection() {
   return (
-    <section className="section-container bg-[--color-bg-primary]" id="pricing">
-      <div className="max-w-6xl mx-auto">
+    <section className="section-container bg-primary" id="pricing">
+      <div className="max-w-7xl mx-auto">
         {/* Pricing Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-[--color-text-secondary] mb-4">Pricing</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
+        <div className="mb-12 lg:mb-16">
+          <p className="text-sm lg:text-base font-semibold text-[--color-text-secondary] mb-3 lg:mb-5">Pricing</p>
+          <h2 className="text-3xl lg:text-4xl font-semibold text-[--color-text-primary] mb-5 lg:mb-6">
             Only Pay When You Land the Job
           </h2>
-          <p className="text-lg text-[--color-text-tertiary]">
+          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
             Our 1% success fee is 100% aligned with your success—no job, no fee.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {features.map((feature, index) => (
-            <div key={index} className="flex gap-4">
-              <feature.icon className="w-6 h-6 text-[--color-text-secondary] shrink-0 mt-1" />
-              <div>
-                <h3 className="text-lg font-semibold text-[--color-text-primary] mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-[--color-text-tertiary]">
-                  {feature.description}
-                </p>
+        {/* Two Column Layout: Features + Pricing Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* Left Column: Features */}
+          <div className="flex flex-col gap-10 lg:gap-12">
+            {features.map((feature, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="featured-icon-lg featured-icon-gray-modern shrink-0">
+                  <feature.icon className="w-7 h-7" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-[--color-text-primary] mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base text-[--color-text-tertiary] leading-6">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right Column: Pricing Card */}
+          <Card className="card-shadow-md p-8 lg:p-12 border border-[var(--color-border-secondary)] h-fit">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8 mb-8">
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xl font-semibold text-[--color-text-primary]">Success Fee</p>
+                  <span className="text-sm font-medium text-[--color-brand-light] px-2 py-0.5 rounded">One time</span>
+                </div>
+                <p className="text-base text-[--color-text-tertiary]">Payable after you land the job</p>
+              </div>
+              <div className="flex items-baseline gap-0.5">
+                <span className="text-5xl lg:text-6xl font-semibold text-[--color-text-primary] leading-none">1</span>
+                <span className="text-4xl font-semibold text-[--color-text-primary] leading-none">%</span>
+                <span className="text-base font-medium text-[--color-text-tertiary] ml-1 self-end pb-1">First year's salary</span>
               </div>
             </div>
-          ))}
+
+            <div className="border-t border-[--color-border-subtle] pt-6 mb-6">
+              <p className="text-base font-semibold text-[--color-text-primary] mb-6">INCLUDES</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                {includes.map((item, index) => (
+                  <div key={index} className="flex gap-3 items-start">
+                    <CheckmarkIcon className="w-3 h-3 text-[--color-success] shrink-0 mt-1.5 bg-[--color-success-light] rounded-full p-0.5" />
+                    <span className="text-base text-[--color-text-tertiary]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <Button variant="primary" size="lg" className="w-full">Get started—risk free</Button>
+              <Button variant="tertiary" size="lg" className="w-full">
+                Questions? Ask Casian
+              </Button>
+            </div>
+          </Card>
         </div>
 
-        {/* Pricing Card */}
-        <Card className="mb-16 max-w-2xl mx-auto">
-          <div className="mb-8">
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-semibold text-[--color-text-primary]">1</span>
-              <span className="text-4xl font-semibold text-[--color-text-primary]">%</span>
-              <span className="text-lg text-[--color-text-tertiary]">First year's salary</span>
-            </div>
-            <div>
-              <p className="font-semibold text-[--color-text-primary]">Success Fee</p>
-              <p className="text-sm text-[--color-brand] mb-2">One time</p>
-              <p className="text-sm text-[--color-text-tertiary]">Payable after you land the job</p>
-            </div>
-          </div>
-
-          <div className="border-t border-[--color-border] pt-8 mb-8">
-            <p className="font-semibold text-[--color-text-primary] mb-4">INCLUDES</p>
-            <div className="grid grid-cols-2 gap-4">
-              {includes.map((item, index) => (
-                <div key={index} className="flex gap-3 items-start">
-                  <CheckmarkIcon className="w-5 h-5 text-[--color-success] shrink-0 mt-0.5" />
-                  <span className="text-sm text-[--color-text-tertiary]">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <Button variant="primary" className="w-full">Get started—risk free</Button>
-            <button className="w-full px-6 py-3 text-[--color-text-secondary] border-2 border-[--color-border] rounded-lg font-semibold hover:border-[--color-text-primary] hover:text-[--color-text-primary] transition-colors">
-              Questions? Ask Casian
-            </button>
-          </div>
-        </Card>
-
         {/* Payment Timeline */}
-        <div className="mt-20">
-          <h3 className="text-2xl font-semibold text-[--color-text-primary] mb-12 text-center">
+        <div className="bg-secondary rounded-2xl p-8 lg:p-12">
+          <h3 className="text-xl lg:text-2xl font-semibold text-[--color-text-primary] mb-8 lg:mb-12">
             Payment Timeline
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
             {timeline.map((item, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-[--color-brand] flex items-center justify-center text-white font-semibold mb-4">
+              <div key={index} className="flex flex-col items-start lg:items-center">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[--color-brand] flex items-center justify-center text-white text-sm font-semibold mb-4">
                   {item.step}
                 </div>
-                <p className="font-semibold text-[--color-text-primary] text-center mb-2 text-sm">
+                <p className="font-semibold text-[--color-text-primary] mb-1 text-sm lg:text-base lg:text-center">
                   {item.title}
                 </p>
-                <p className="text-xs text-[--color-text-tertiary] text-center">
+                <p className="text-sm text-[--color-text-tertiary] lg:text-center">
                   {item.subtitle}
                 </p>
               </div>

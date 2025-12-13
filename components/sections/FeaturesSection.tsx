@@ -56,10 +56,10 @@ export default function FeaturesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index}>
+            <Card key={index} className="p-8">
               <div className="flex flex-col gap-6">
-                <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center border-2 border-white">
-                  <feature.icon className="w-6 h-6" />
+                <div className="featured-icon-lg featured-icon-brand-modern">
+                  <feature.icon className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-[--color-text-primary] mb-3">
