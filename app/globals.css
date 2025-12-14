@@ -239,7 +239,12 @@
        TYPOGRAPHY PRIMITIVES
        ============================================ */
     --Font-family-font-family-display: 'Inter', sans-serif;
+    --Font-family-font-family-body: 'Inter', sans-serif;
     --Font-weight-regular: 400;
+    
+    /* Text Sizes */
+    --Font-size-text-md: 16px;
+    --Line-height-text-md: 24px;
   }
 
   /* ============================================
@@ -290,6 +295,7 @@
     --Colors-Text-text-placeholder: var(--Colors-Gray-light-mode-500);
     --Colors-Text-text-brand-primary: var(--Colors-Brand-900);
     --Colors-Text-text-brand-secondary: var(--Colors-Brand-700);
+    --Colors-Text-text-brand-secondary-700: var(--Colors-Brand-700);
     --Colors-Text-text-brand-secondary-hover: var(--Colors-Brand-800);
     --Colors-Text-text-brand-tertiary: var(--Colors-Brand-600);
     --Colors-Text-text-error-primary: var(--Colors-Error-600);

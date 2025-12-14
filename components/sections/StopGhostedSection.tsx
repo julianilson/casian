@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 export default function StopGhostedSection() {
   return (
     <section className="section-container bg-primary">
-      <Card className="bg-[var(--Colors-Background-bg-secondary)] flex flex-col lg:flex-row items-center justify-between gap-8 p-8 lg:p-12 card-shadow-lg">
+      <Card className="bg-[var(--Colors-Background-bg-secondary)] flex flex-col lg:flex-row items-center justify-between gap-8 p-8 lg:p-12">
         <div className="flex-1">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Stop getting ghosted.

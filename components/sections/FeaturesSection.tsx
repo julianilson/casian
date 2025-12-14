@@ -6,6 +6,7 @@ import PencilIcon from '../icons/pencil-icon.svg';
 import SearchIcon from '../icons/search-icon.svg';
 import ClockIcon from '../icons/clock-icon.svg';
 import ClipboardIcon from '../icons/clipboard-icon.svg';
+import Subheading from '../ui/Subheading';
 
 const features = [
   {
@@ -44,19 +45,19 @@ export default function FeaturesSection() {
   return (
     <section className="section-container" id="features">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-[--color-text-secondary] mb-4">The Reality</p>
+        <div className="text-left mb-16">
+          <Subheading className="mb-4">The Reality</Subheading>
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             The Job Market is Broken for Mid-Career Professionals
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl mx-auto">
+          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
             You're not imagining it—it's exhausting by design. Here's what's actually happening out there:
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="p-8">
+            <Card key={index} className="p-8 !bg-[var(--Colors-Background-bg-secondary)]">
               <div className="flex flex-col gap-6">
                 <div className="featured-icon-lg featured-icon-brand-modern">
                   <feature.icon className="w-7 h-7" />

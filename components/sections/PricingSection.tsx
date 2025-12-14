@@ -8,6 +8,7 @@ import GiftIcon from '../icons/gift-icon.svg';
 import BadgeIcon from '../icons/badge-icon.svg';
 import CalendarIcon from '../icons/calendar-icon.svg';
 import CheckmarkIcon from '../icons/checkmark-icon.svg';
+import Subheading from '../ui/Subheading';
 
 const features = [
   {
@@ -60,11 +61,11 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto">
         {/* Pricing Header */}
         <div className="mb-12 lg:mb-16">
-          <p className="text-sm lg:text-base font-semibold text-[--color-text-secondary] mb-3 lg:mb-5">Pricing</p>
+          <Subheading className="mb-3 lg:mb-5">Pricing</Subheading>
           <h2 className="text-3xl lg:text-4xl font-semibold text-[--color-text-primary] mb-5 lg:mb-6">
             Only Pay When You Land the Job
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
+          <p className="text-lg text-tertiary max-w-3xl">
             Our 1% success fee is 100% aligned with your success—no job, no fee.
           </p>
         </div>
@@ -82,7 +83,7 @@ export default function PricingSection() {
                   <h3 className="text-lg font-semibold text-[--color-text-primary] mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-base text-[--color-text-tertiary] leading-6">
+                  <p className="text-base text-tertiary leading-6">
                     {feature.description}
                   </p>
                 </div>
@@ -91,35 +92,38 @@ export default function PricingSection() {
           </div>
 
           {/* Right Column: Pricing Card */}
-          <Card className="card-shadow-md p-8 lg:p-12 border border-[var(--color-border-secondary)] h-fit">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8 mb-8">
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <p className="text-xl font-semibold text-[--color-text-primary]">Success Fee</p>
-                  <span className="text-sm font-medium text-[--color-brand-light] px-2 py-0.5 rounded">One time</span>
+          <Card className="card-shadow-md p-0 border border-[var(--Colors-Border-border-secondary)] h-fit rounded-[var(--radius-2xl)] overflow-hidden">
+            {/* Header */}
+            <div className="flex flex-row justify-between items-start gap-[var(--spacing-4xl)] pt-[var(--spacing-4xl)] px-[var(--spacing-4xl)] pb-[var(--spacing-3xl)]">
+              <div className="flex flex-col gap-[var(--spacing-md)]">
+                <div className="flex items-center gap-[var(--spacing-md)]">
+                  <h3 className="text-xl font-semibold text-[var(--Colors-Text-text-primary)]">Success Fee</h3>
+                  <span className="flex items-center py-[var(--spacing-xxs)] px-[10px] rounded-[var(--radius-full)] border border-[var(--Component-colors-Utility-Brand-utility-brand-200)] bg-[var(--Component-colors-Utility-Brand-utility-brand-50)] text-sm font-medium text-[var(--Colors-Brand-700)]">One time</span>
                 </div>
-                <p className="text-base text-[--color-text-tertiary]">Payable after you land the job</p>
+                <p className="text-base text-tertiary">Payable after you land the job</p>
               </div>
-              <div className="flex items-baseline gap-0.5">
-                <span className="text-5xl lg:text-6xl font-semibold text-[--color-text-primary] leading-none">1</span>
-                <span className="text-4xl font-semibold text-[--color-text-primary] leading-none">%</span>
-                <span className="text-base font-medium text-[--color-text-tertiary] ml-1 self-end pb-1">First year's salary</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-5xl lg:text-6xl font-semibold text-[var(--Colors-Text-text-primary)] leading-none">1</span>
+                <span className="text-4xl font-semibold text-[var(--Colors-Text-text-primary)] leading-none">%</span>
+                <span className="text-base font-medium text-tertiary ml-1 self-end pb-1">First year's salary</span>
               </div>
             </div>
 
-            <div className="border-t border-[--color-border-subtle] pt-6 mb-6">
-              <p className="text-base font-semibold text-[--color-text-primary] mb-6">INCLUDES</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+            {/* Features */}
+            <div className="border-t border-[var(--Colors-Border-border-secondary)] pt-[var(--spacing-4xl)] px-[var(--spacing-4xl)] pb-[var(--spacing-5xl)]">
+              <p className="text-base font-semibold text-[var(--Colors-Text-text-primary)] mb-[var(--spacing-3xl)]">INCLUDES</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-[var(--spacing-3xl)] gap-x-[var(--spacing-lg)]">
                 {includes.map((item, index) => (
-                  <div key={index} className="flex gap-3 items-start">
-                    <CheckmarkIcon className="w-3 h-3 text-[--color-success] shrink-0 mt-1.5 bg-[--color-success-light] rounded-full p-0.5" />
-                    <span className="text-base text-[--color-text-tertiary]">{item}</span>
+                  <div key={index} className="flex gap-[var(--spacing-lg)] items-start">
+                    <CheckmarkIcon className="w-5 h-5 text-[var(--Colors-Success-600)] shrink-0" />
+                    <span className="text-base text-tertiary">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            {/* Actions */}
+            <div className="flex flex-col gap-[var(--spacing-lg)] p-[var(--spacing-4xl)] border-t border-[var(--Colors-Border-border-secondary)]">
               <Button variant="primary" size="lg" className="w-full">Get started—risk free</Button>
               <Button variant="tertiary" size="lg" className="w-full">
                 Questions? Ask Casian
@@ -129,22 +133,34 @@ export default function PricingSection() {
         </div>
 
         {/* Payment Timeline */}
-        <div className="bg-secondary rounded-2xl p-8 lg:p-12">
-          <h3 className="text-xl lg:text-2xl font-semibold text-[--color-text-primary] mb-8 lg:mb-12">
+        {/* Payment Timeline */}
+        <div className="bg-[var(--Colors-Background-bg-secondary)] rounded-2xl py-[var(--spacing-5xl)] px-[var(--spacing-3xl)] lg:p-[var(--spacing-4xl)] flex flex-col items-center gap-[var(--spacing-4xl)]">
+          <h3 className="text-xl lg:text-2xl font-semibold text-[--color-text-primary] text-center">
             Payment Timeline
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+          <div className="flex flex-col items-start w-full lg:flex-row lg:justify-between">
             {timeline.map((item, index) => (
-              <div key={index} className="flex flex-col items-start lg:items-center">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[--color-brand] flex items-center justify-center text-white text-sm font-semibold mb-4">
-                  {item.step}
+              <div key={index} className="flex flex-row items-stretch lg:flex-col lg:items-center gap-[var(--spacing-xl)] w-full lg:flex-1">
+                <div className="flex flex-col lg:flex-row items-center lg:w-full shrink-0">
+                  <div className={`hidden lg:block h-0 flex-1 border-t-2 border-dotted border-[var(--Colors-Border-border-primary)] ${index === 0 ? 'invisible' : ''}`}></div>
+                  <div className="flex flex-col items-center h-full lg:h-auto">
+                    <div className="flex w-[32px] h-[32px] py-[6px] justify-center items-center rounded-[var(--radius-full)] border border-[var(--Colors-Border-border-secondary)] bg-[var(--Colors-Background-bg-primary)] text-[var(--Colors-Text-text-secondary)] text-sm font-semibold shrink-0 z-10 lg:mx-[var(--spacing-md)]">
+                      {item.step}
+                    </div>
+                    {index !== timeline.length - 1 && (
+                      <div className="lg:hidden w-0 border-l-2 border-dotted border-[var(--Colors-Border-border-primary)] flex-1 my-1"></div>
+                    )}
+                  </div>
+                  <div className={`hidden lg:block h-0 flex-1 border-t-2 border-dotted border-[var(--Colors-Border-border-primary)] ${index === timeline.length - 1 ? 'invisible' : ''}`}></div>
                 </div>
-                <p className="font-semibold text-[--color-text-primary] mb-1 text-sm lg:text-base lg:text-center">
-                  {item.title}
-                </p>
-                <p className="text-sm text-[--color-text-tertiary] lg:text-center">
-                  {item.subtitle}
-                </p>
+                <div className="flex flex-col items-start lg:items-center lg:text-center pb-[var(--spacing-4xl)] lg:pb-0">
+                  <p className="font-semibold text-[--color-text-primary] mb-1 text-sm lg:text-base">
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-tertiary">
+                    {item.subtitle}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

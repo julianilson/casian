@@ -7,6 +7,7 @@ import MessageIcon from '../icons/message-icon.svg';
 import PenIcon from '../icons/pen-icon.svg';
 import NetworkIcon from '../icons/network-icon.svg';
 import CheckmarkIcon from '../icons/checkmark-icon.svg';
+import Subheading from '../ui/Subheading';
 
 const features = [
   {
@@ -63,12 +64,12 @@ export default function ProductFeaturesSection() {
   return (
     <section className="section-container bg-primary">
       <div className="max-w-6xl mx-auto space-y-24">
-        <div className="text-left mb-16">
-          <p className="text-sm font-semibold text-[--color-text-secondary] mb-4">Introducing Casian AI</p>
+        <div className="text-center mb-16">
+          <Subheading className="mb-4">Introducing Casian AI</Subheading>
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Your Personalized Job-Search Coach
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
+          <p className="text-lg text-[--color-text-tertiary] max-w-3xl mx-auto">
             Casian AI is the expert career strategist, résumé whisperer and hype-man you never knew you could afford—available 24/7 in your AirPods.
           </p>
         </div>
@@ -87,7 +88,7 @@ export default function ProductFeaturesSection() {
                   <p className="text-lg text-[--color-text-tertiary]">{feature.description}</p>
                 </div>
               </div>
-              
+
               <div className="space-y-4 pt-4 pl-24">
                 {feature.checks.map((check, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
