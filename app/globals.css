@@ -241,7 +241,7 @@
     --Font-family-font-family-display: 'Inter', sans-serif;
     --Font-family-font-family-body: 'Inter', sans-serif;
     --Font-weight-regular: 400;
-    
+
     /* Text Sizes */
     --Font-size-text-md: 16px;
     --Line-height-text-md: 24px;
@@ -552,6 +552,7 @@
     --Colors-Text-text-placeholder: var(--Colors-Gray-dark-mode-500);
     --Colors-Text-text-brand-primary: var(--Colors-Gray-dark-mode-50);
     --Colors-Text-text-brand-secondary: var(--Colors-Gray-dark-mode-300);
+    --Colors-Text-text-brand-secondary-700: #CECFD2;
     --Colors-Text-text-brand-secondary-hover: var(--Colors-Gray-dark-mode-200);
     --Colors-Text-text-brand-tertiary: var(--Colors-Gray-dark-mode-400);
     --Colors-Text-text-error-primary: var(--Colors-Error-400);

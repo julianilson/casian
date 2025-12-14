@@ -21,7 +21,7 @@ export default function HeroSection() {
           Private. Personal. Job Search Coach.
         </Subheading>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-[--color-text-primary] mb-6 leading-none tracking-[-0.03em]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[--color-text-primary] mb-6 leading-none tracking-[-0.03em]">
           Unemployment hurts.<br />
           Your comeback story starts here.
         </h1>
