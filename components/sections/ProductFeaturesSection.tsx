@@ -77,7 +77,7 @@ export default function ProductFeaturesSection() {
         {features.map((feature, index) => (
           <div key={index} className={`flex flex-col gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
             <div className="flex-1">
-              <div className="flex items-start gap-6 mb-6">
+              <div className="flex flex-col lg:flex-row items-start gap-6 mb-6">
                 <div className="featured-icon-lg featured-icon-brand-light shrink-0">
                   <feature.icon className="w-7 h-7" />
                 </div>
@@ -89,7 +89,7 @@ export default function ProductFeaturesSection() {
                 </div>
               </div>
 
-              <div className="space-y-4 pt-4 pl-24">
+              <div className="space-y-4 pt-4 pl-0 lg:pl-24">
                 {feature.checks.map((check, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
                     <CheckmarkIcon className="w-6 h-6 text-[--color-success] shrink-0 mt-1" />
