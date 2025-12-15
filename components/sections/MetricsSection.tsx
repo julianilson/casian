@@ -20,7 +20,7 @@ export default function MetricsSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Setting the Bar for Job Search Success
           </h2>
-          <p className="text-lg text-[--color-text-tertiary]">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)]">
             Our goal is to deliver real, measurable results for job seekers like you. These are our targets:
           </p>
         </div>

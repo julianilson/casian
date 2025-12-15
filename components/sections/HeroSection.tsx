@@ -26,7 +26,7 @@ export default function HeroSection() {
           Your comeback story starts here.
         </h1>
 
-        <p className="text-lg sm:text-xl text-tertiary mb-12 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-[var(--Colors-Text-text-tertiary)] mb-12 max-w-3xl mx-auto">
           Job-search coaching for mid-career professionals ready to bounce back stronger.
         </p>
 
@@ -37,14 +37,20 @@ export default function HeroSection() {
 
         {/* Social Proof */}
         <div className="flex items-center justify-center gap-4">
-          <Image
-            src="/images/avatar-group.svg"
-            alt="Happy customers"
-            width={152}
-            height={40}
-          />
-          <p className="text-tertiary text-sm">
-            Join 100+ happy and satisfied customers.
+          <div className="flex -space-x-3">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <Image
+                key={num}
+                src={`/images/avatar-${num}.png`}
+                alt={`Happy customer ${num}`}
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-white"
+              />
+            ))}
+          </div>
+          <p className="text-[var(--Colors-Text-text-tertiary)] text-sm text-left">
+            Join 100+ happy and<br /> satisfied customers.
           </p>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function StopGhostedSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Stop getting ghosted.
           </h2>
-          <p className="text-lg text-[--color-text-tertiary]">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)]">
             Get clarity on what's killing your candidacy—so your next opportunity earns a real reply.
           </p>
         </div>

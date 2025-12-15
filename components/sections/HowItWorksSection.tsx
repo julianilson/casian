@@ -50,7 +50,7 @@ export default function HowItWorksSection() {
               <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary]">
                 How It Works
               </h2>
-              <p className="text-lg text-[--color-text-tertiary]">
+              <p className="text-lg text-[var(--Colors-Text-text-tertiary)]">
                 A proven, six-step system that transforms your job search from guesswork to offer letter.
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function HowItWorksSection() {
                   <h3 className="text-lg font-semibold text-[--color-text-primary]">
                     {step.number}. {step.title}
                   </h3>
-                  <p className="text-base text-[--color-text-tertiary] leading-relaxed">
+                  <p className="text-base text-[var(--Colors-Text-text-tertiary)] leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -11,7 +11,7 @@ export default function Footer() {
           <h2 className="text-2xl sm:text-3xl font-semibold text-[--color-text-primary] mb-4">
             Your comeback story starts here
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] mb-8">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)] mb-8">
             Rebuild your confidence. Take control of your future.
           </p>
           <Button variant="primary">Talk to Casian now</Button>
@@ -19,17 +19,17 @@ export default function Footer() {
 
         <div className="border-t border-[var(--color-border-secondary)] pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-[--color-text-tertiary]">
+            <p className="text-sm text-[var(--Colors-Text-text-tertiary)]">
               © 2025 Casian AI. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a href="#terms" className="text-sm text-[--color-text-tertiary] hover:text-[--color-text-primary] transition-colors">
+              <a href="#terms" className="text-sm text-[var(--Colors-Text-text-tertiary)] hover:text-[--color-text-primary] transition-colors">
                 Terms
               </a>
-              <a href="#privacy" className="text-sm text-[--color-text-tertiary] hover:text-[--color-text-primary] transition-colors">
+              <a href="#privacy" className="text-sm text-[var(--Colors-Text-text-tertiary)] hover:text-[--color-text-primary] transition-colors">
                 Privacy
               </a>
-              <a href="#cookies" className="text-sm text-[--color-text-tertiary] hover:text-[--color-text-primary] transition-colors">
+              <a href="#cookies" className="text-sm text-[var(--Colors-Text-text-tertiary)] hover:text-[--color-text-primary] transition-colors">
                 Cookies
               </a>
             </div>

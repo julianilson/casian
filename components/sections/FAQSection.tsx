@@ -100,7 +100,7 @@ export default function FAQSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-[--color-text-tertiary]">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)]">
             Things you might want to know but are shy to ask Casian directly.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function FAQSection() {
                         <MinusIcon className="w-6 h-6 text-[--color-text-muted] shrink-0 transition-transform group-data-[state=open]:rotate-180" />
                       </Accordion.Trigger>
                     </Accordion.Header>
-                    <Accordion.Content className="pt-4 text-[--color-text-tertiary] leading-relaxed overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                    <Accordion.Content className="pt-4 text-[var(--Colors-Text-text-tertiary)] leading-relaxed overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
                       {item.a}
                     </Accordion.Content>
                   </Accordion.Item>

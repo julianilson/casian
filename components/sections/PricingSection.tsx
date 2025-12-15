@@ -65,7 +65,7 @@ export default function PricingSection() {
           <h2 className="text-3xl lg:text-4xl font-semibold text-[--color-text-primary] mb-5 lg:mb-6">
             Only Pay When You Land the Job
           </h2>
-          <p className="text-lg text-tertiary max-w-3xl">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)] max-w-3xl">
             Our 1% success fee is 100% aligned with your success—no job, no fee.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function PricingSection() {
                   <h3 className="text-lg font-semibold text-[--color-text-primary] mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-base text-tertiary leading-6">
+                  <p className="text-base text-[var(--Colors-Text-text-tertiary)] leading-6">
                     {feature.description}
                   </p>
                 </div>
@@ -100,7 +100,7 @@ export default function PricingSection() {
                   <h3 className="text-xl font-semibold text-[var(--Colors-Text-text-primary)]">Success Fee</h3>
                   <span className="flex items-center py-[var(--spacing-xxs)] px-[10px] rounded-[var(--radius-full)] border border-[var(--Component-colors-Utility-Brand-utility-brand-200)] bg-[var(--Component-colors-Utility-Brand-utility-brand-50)] text-sm font-medium text-[var(--Colors-Brand-700)]">One time</span>
                 </div>
-                <p className="text-base text-tertiary">Payable after you land the job</p>
+                <p className="text-base text-[var(--Colors-Text-text-tertiary)]">Payable after you land the job</p>
               </div>
               <div className="flex items-baseline gap-1">
                 <span className="text-5xl lg:text-6xl font-semibold text-[var(--Colors-Text-text-primary)] leading-none">1</span>
@@ -116,7 +116,7 @@ export default function PricingSection() {
                 {includes.map((item, index) => (
                   <div key={index} className="flex gap-[var(--spacing-lg)] items-start">
                     <CheckmarkIcon className="w-5 h-5 text-[var(--Colors-Success-600)] shrink-0" />
-                    <span className="text-base text-tertiary">{item}</span>
+                    <span className="text-base text-[var(--Colors-Text-text-tertiary)]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -157,7 +157,7 @@ export default function PricingSection() {
                   <p className="font-semibold text-[--color-text-primary] mb-1 text-sm lg:text-base">
                     {item.title}
                   </p>
-                  <p className="text-sm text-tertiary">
+                  <p className="text-sm text-[var(--Colors-Text-text-tertiary)]">
                     {item.subtitle}
                   </p>
                 </div>

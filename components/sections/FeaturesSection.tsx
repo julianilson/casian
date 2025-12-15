@@ -50,7 +50,7 @@ export default function FeaturesSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             The Job Market is Broken for Mid-Career Professionals
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)] max-w-3xl">
             You're not imagining it—it's exhausting by design. Here's what's actually happening out there:
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function FeaturesSection() {
                   <h3 className="text-xl font-semibold text-[--color-text-primary] mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-[--color-text-tertiary] leading-relaxed">
+                  <p className="text-[var(--Colors-Text-text-tertiary)] leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

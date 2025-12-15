@@ -22,7 +22,7 @@ export default function TestimonialSection() {
           </div>
           <div>
             <p className="text-lg font-semibold text-[--color-text-primary]">Jonathan F.</p>
-            <p className="text-[--color-text-tertiary]">Senior UX Designer</p>
+            <p className="text-[var(--Colors-Text-text-tertiary)]">Senior UX Designer</p>
           </div>
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function ProductFeaturesSection() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-[--color-text-primary] mb-6">
             Your Personalized Job-Search Coach
           </h2>
-          <p className="text-lg text-[--color-text-tertiary] max-w-3xl mx-auto">
+          <p className="text-lg text-[var(--Colors-Text-text-tertiary)] max-w-3xl mx-auto">
             Casian AI is the expert career strategist, résumé whisperer and hype-man you never knew you could afford—available 24/7 in your AirPods.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function ProductFeaturesSection() {
                   <h3 className="text-3xl font-semibold text-[--color-text-primary]">
                     {feature.title}
                   </h3>
-                  <p className="text-lg text-[--color-text-tertiary]">{feature.description}</p>
+                  <p className="text-lg text-[var(--Colors-Text-text-tertiary)]">{feature.description}</p>
                 </div>
               </div>
 
@@ -93,7 +93,7 @@ export default function ProductFeaturesSection() {
                 {feature.checks.map((check, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
                     <CheckmarkIcon className="w-6 h-6 text-[--color-success] shrink-0 mt-1" />
-                    <p className="text-[--color-text-tertiary] leading-relaxed">
+                    <p className="text-[var(--Colors-Text-text-tertiary)] leading-relaxed">
                       {check}
                     </p>
                   </div>
