@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/sections/HeroSection';
@@ -15,6 +18,35 @@ import FAQSection from '@/components/sections/FAQSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
 
 export default function Home() {
+  // 1. Define a variable to store the location
+  const [userLocation, setUserLocation] = useState("Unknown Location");
+
+  // 2. Fetch location after the page has successfully loaded
+  useEffect(() => {
+    const fetchLocation = () => {
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          // Construct a readable location string, e.g., "Texas, United States"
+          const location = `${data.region}, ${data.country_name}`;
+          setUserLocation(location);
+          console.log("User location detected:", location);
+        })
+        .catch(error => {
+          console.error("Error fetching location:", error);
+          // Fallback if the API fails
+          setUserLocation("Unknown Location");
+        });
+    };
+
+    if (document.readyState === 'complete') {
+      fetchLocation();
+    } else {
+      window.addEventListener('load', fetchLocation);
+      return () => window.removeEventListener('load', fetchLocation);
+    }
+  }, []);
+
   return (
     <>
       <Header />
