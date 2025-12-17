@@ -17,9 +17,14 @@ import PricingSection from '@/components/sections/PricingSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
 
+import Vapi from '@vapi-ai/web';
+
+const vapi = new Vapi('051655b6-fb3c-48fa-82c6-83c8bb17becc');
+
 export default function Home() {
   // 1. Define a variable to store the location
   const [userLocation, setUserLocation] = useState("Unknown Location");
+  const [isCallActive, setIsCallActive] = useState(false);
 
   // 2. Fetch location after the page has successfully loaded
   useEffect(() => {
@@ -47,11 +52,35 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    vapi.on('call-start', () => setIsCallActive(true));
+    vapi.on('call-end', () => setIsCallActive(false));
+    return () => {
+      vapi.removeAllListeners();
+    };
+  }, []);
+
+  const startVapi = () => {
+    vapi.start('879d1198-2cc3-47d1-bf85-c5ec8a6b0223', {
+      variableValues: {
+        location: userLocation,
+      },
+    });
+  };
+
+  const endVapi = () => {
+    vapi.stop();
+  };
+
   return (
     <>
       <Header />
       <main>
-        <HeroSection />
+        <HeroSection
+          onStartVapi={startVapi}
+          isCallActive={isCallActive}
+          onEndCall={endVapi}
+        />
         <ApplicationBlackHoleSection />
         <FeaturesSection />
         <TestimonialSection />

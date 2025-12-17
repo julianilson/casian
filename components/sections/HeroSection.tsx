@@ -6,8 +6,15 @@ import Button from '../ui/Button';
 import MicrophoneIcon from '../icons/microphone-icon.svg';
 import BackgroundPattern from '../icons/BackgroundPattern';
 import Subheading from '../ui/Subheading';
+import PhoneHangupIcon from '../icons/phone-hangup-icon.svg';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onStartVapi?: () => void;
+  isCallActive?: boolean;
+  onEndCall?: () => void;
+}
+
+export default function HeroSection({ onStartVapi, isCallActive, onEndCall }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Pattern */}
@@ -30,10 +37,17 @@ export default function HeroSection() {
           Job-search coaching for mid-career professionals ready to bounce back stronger.
         </p>
 
-        <Button variant="primary" className="mb-12">
-          <MicrophoneIcon className="w-5 h-5" />
-          Talk to Casian Now
-        </Button>
+        {isCallActive ? (
+          <Button variant="tertiary" className="mb-12" onClick={onEndCall}>
+            <PhoneHangupIcon className="w-5 h-5" />
+            Hang Up
+          </Button>
+        ) : (
+          <Button variant="primary" className="mb-12" onClick={onStartVapi}>
+            <MicrophoneIcon className="w-5 h-5" />
+            Talk to Casian Now
+          </Button>
+        )}
 
         {/* Social Proof */}
         <div className="flex items-center justify-center gap-4">
